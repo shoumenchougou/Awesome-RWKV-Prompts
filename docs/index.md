@@ -8,7 +8,7 @@ RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Tr
 
 --- 
 > ⚠️**由于 Hugging Face 的 RWKV 在线演示是续写模型，如果你在 [Hugging Face gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 中体验 RWKV 模型，请务必按以下格式输入 prompts :**
->
+
 ```
 User: hi
 
