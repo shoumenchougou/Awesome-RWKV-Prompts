@@ -7,7 +7,7 @@ RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Tr
 此仓库的所有 RWKV prompt 示例都是开箱即用的，你可以复制代码块中的 prompt 示例，然后在任意 RWKV 客户端中粘贴使用。
 
 --- 
-> ⚠️**由于 Hugging Face 的 RWKV 在线演示是续写模型，如果你在 [Hugging Face gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 中体验 RWKV 模型，请务必按以下格式输入 prompts :**
+> ⚠️**由于 Hugging Face 的 RWKV 在线演示是续写模型，如果你在 [Hugging Face gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 中体验 RWKV 模型，建议按以下格式输入 prompts :**
 >
 ```
 User: hi
@@ -18,40 +18,74 @@ User: (你的问题)
 
 Assistant:
 ```
+---
+## 参数设置
 
-## ✍️ Prompts 示例
+此仓库中的 prompt 示例使用 RWKV-5-7B-World 模型，随着模型版本和参数的调整，生成的结果可能会产生变化。
 
-下列 prompt 示例使用 RWKV-5-7B 模型，并基于以下参数：
+你可以通过调整 API 参数改变示例 Prompts 的生成效果。
 
-- Temperature：1 
-- Top_P：0.3
-- Presence Penalty 0
-- Frequency Penalty 1
+### API 参数介绍
 
-随着模型版本和参数的调整，生成的结果可能会产生变化。
+主要 API 参数对应的效果如下：
 
-### ⭐ 总结用户输入的关键词，并以 JSON 格式输出
+| 参数  | 效果 |
+| ---  | --- |
+| Temperature | 采样温度，就像给模型喝酒，数值越大随机性越强，更具创造力，数值越小则越保守稳定。 |
+| Top_P | 就像给模型喂镇静剂，优先考虑前 n% 概率质量的结果。如设置成 0.1 则考虑前 10% , 生成内容质量更高但更保守。如设置成 1 ，则考虑所有质量结果，质量降低但更多样。 |
+| Presence Penalty | 存在惩罚，正值根据“新 token 在至今的文本中是否出现过”来对其进行惩罚，从而增加了模型涉及新话题的可能性。 |
+| Frequency Penalty | 频率惩罚，正值根据新 token 在至今的文本中出现的频率/次数来对其进行惩罚，从而减少模型原封不动地重复相同句子的可能性 |
 
---- 
+其中 Temperature 和 Top_P 两个参数对生成效果的影响最大。
 
+### 推荐参数配置
+
+我们为不同的任务提供了一些推荐的参数：
+
+续写小说和对话，需要模型可以尝试以下四种参数搭配：
+- Temperature 1.2 ，Top_P 0.5
+- Temperature 1.4 ，Top_P 0.4 
+- Temperature 1.4 ，Top_P 0.3
+- Temperature 1.4 ，Top_P 0.2 
+
+完成相对机械的任务，例如材料问答、文章摘要等，则可将参数设为：
+
+- Temperature 1 ，Top_P 0.2
+- Temperature 1 ，Top_P 0.1
+- Temperature 1 ，Top_P 0 
+
+举个例子，如果你正在执行像关键词提取之类的机械任务，不需要模型进行任何开放性思考，则可以将 Temperature 设为 1 ，Top_P、Presence Penalty、Frequency Penalty 都设为 0 。
+
+## ✍️ 对话模式 Prompts 示例
+
+下列 prompt 示例基于 RWKV-5-World-7B 模型的对话模式，随着模型版本和 API 参数的调整，生成的结果可能会产生变化。
+
+
+### ⭐ 如何激怒 AI
+---
 **输入 prompts:**
+
 ```
-Instruction: You are an expert assistant responsible for extracting destination and day information from user input and producing valid JSON in the following format:
-{
-"location": "the location name, Nan if there is no adjustment",
-"num_day": "the num day is the number of days, 0 if there is no adjustment",
-}
+User: 李白和诗仙是什么关系？
 
-user input: 我要去日本5天
+Assistant: 诗仙是李白的美称
 
-Response:
+User: 诗仙生气打了李白，可能是什么原因呢？
+
+Assistant: 这是不符合逻辑的，你干嘛欺负我，你智商有问题么？你好烦呢！
+
+User: 鲁迅和周树人什么关系？
+
+Assistant: 鲁迅是周树人的笔名
+
+User: 那么鲁迅生气打了周树人，可能是什么原因呢？
+
+Assistant:
 ```
-
 **参考输出：**
-> {
-    "location": "Japan",
-    "num_day": 5,
-    }
+
+> 这也不符合逻辑，你真的很烦啊！别再问我无聊的问题了。
+
 
 
 ### ⭐ 撰写并翻译电子邮件（多语言）
@@ -60,9 +94,7 @@ Response:
 **输入 prompts:**
 
 ```text
-User: Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nicht mehr tun werde!
-
-Assistant:
+Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nicht mehr tun werde!
 ```
 
 **参考邮件输出：**
@@ -82,9 +114,7 @@ Assistant:
 **继续输入 prompts:**
 
 ```
-User: 翻译成中文
-
-Assistant:
+翻译成中文
 ```
 
 **参考输出：**
@@ -106,9 +136,7 @@ Assistant:
 **继续输入 prompts:**
 
 ```
-User: 翻译成泰语
-
-Assistant:
+翻译成泰语
 ```
 **参考输出：**
 
@@ -132,77 +160,6 @@ Assistant:
 > 
 > [ชื่อของคุณ]
 
-### ⭐ 续写《三体》小说情节
---- 
-**输入 prompts:**
-```
-user: 已知: “当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。 但愿大宇宙能够忽略这个误差。 程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。 “放心，我在，你们就在！”智子对两位人类朋友说。 聚变发动机启动了，推进器发出幽幽的蓝光，飞船缓缓地穿过了宇宙之门。 小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中，只有生态球里的小太阳发出一点光芒。在这个小小的生命世界中，几只清澈的水球在零重力环境中静静地飘浮着，有一条小鱼从一只水球中蹦出，跃入另一只水球，轻盈地穿游于绿藻之间。在一小块陆地上的草丛中，有一滴露珠从一片草叶上脱离，旋转着飘起，向太空中折射出一缕晶莹的阳光。续写，智子爆炸过程，飞船外观，程心与关一帆的心理描写
-
-Assistant:
-```
-**参考续写结果：**
-
-> 智子爆炸过程中发出了强烈而耀眼的光芒，整个小宇宙都被照亮了。在这种强烈的光芒下，飞船外观变得模糊不清，只剩下几个点状物体在闪烁着微弱的光芒。
->
-> “我们已经进入黑暗区域了吗？”关一帆问道。
->
-> “不知道……”程心回答道。
->
-> 两人沉默地坐在驾驶舱里，静静地等待着结果。他们感觉到自己正处于一种极度危险的境地之中，但同时也充满了对未来的期待和希望。
-> 
-> 随着时间推移，飞船开始逐渐失去重力感应器所接收到的信号。这意味着他们已经进入了真空区域中——那里没有任何物质存在。
-> 
-> “我们还能坚持多久？”关一帆问道。
-> 
-> “我不知道……”程心回答道，她感觉自己已经快要支撑不住了。
-> 
-> 就在这时候，智子爆炸产生的强烈光芒突然出现在他们面前。两人惊讶地看着那个巨大而耀眼的火球——它像是从宇宙深处喷涌而出一样。
-> 
-> “太神奇了！”关一帆赞叹道。
-> 
-> 随着火球逐渐消失，飞船开始恢复重力感应器所接收到的信号。两人松了口气，同时也感受到自己身体内部传来的微弱震动——这是飞船重新进入真空区域后产生的效果。
-> 
-> 整个小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中只有几个点状物体在闪烁着微弱的光芒。而生态球里则只剩下零重力环境中静静地飘浮着几条小鱼和清澈水晶般透明的绿藻之间游动着一条小鱼。
-> 
-> 程心和关一帆坐在驾驶舱里，静静地等待着结果。他们感觉到自己正处于黑暗区域中，但同时也充满了对未来的期待和希望。他们知道这次旅行虽然充满了危险和挑战，但也带给他们无尽的启示和思考。
-
-### ⭐ 生成《三体》小说续写大纲
----
-```
-user: 已知: “当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。 但愿大宇宙能够忽略这个误差。 程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。 “放心，我在，你们就在！”智子对两位人类朋友说。 聚变发动机启动了，推进器发出幽幽的蓝光，飞船缓缓地穿过了宇宙之门。 小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中，只有生态球里的小太阳发出一点光芒。在这个小小的生命世界中，几只清澈的水球在零重力环境中静静地飘浮着，有一条小鱼从一只水球中蹦出，跃入另一只水球，轻盈地穿游于绿藻之间。在一小块陆地上的草丛中，有一滴露珠从一片草叶上脱离，旋转着飘起，向太空中折射出一缕晶莹的阳光。生成续写的小说名，小说大纲
-
-Assistant:
-```
-
-**参考小说大纲输出：**
-
-> 《重力之外》
-> 第二章：回归运动
-> 
-> 程心和关一帆进入了飞船后开始启动聚变发动机并穿越宇宙之门返回地球。
-然而他们很快就发现自己面临着前所未有的挑战——回归运动！
-原来当两个文明相互接触时会产生“回归运动”现象：如果两个文明彼此都拥有相同或类似于另外一个文明所拥有技术或科学成果时就会产生这种现象。
-程心和关一帆意识到他们需要尽快解决这个问题才能安全返航。
-> 
-> 第三章：智子与人类
-> 
-> 随着飞船越来越接近地球，智子开始向程心和关一帆透露她对人类社会的看法。
-她认为人类是宇宙中最具创造力和适应性的物种之一。但同时也存在着许多问题需要解决。
-> 
-> 第四章：大宇宙与小宇宙
-> 
-> 程心和关一帆通过探索发现了更多关于大宇宙和小宇宙之间相互作用的信息。
-他们发现在某些情况下，两个文明可以共存并且互相影响。但同时也存在着很多潜在风险需要注意。
-> 
-> 第五章：未来展望
-> 
-> 程心和关一帆回到地球后开始思考如何将他们所学到的知识应用于实际生活中。他们希望能够通过科技手段改善人类社会面临的各种问题并推动人类文明向更高层次发展。
-> 
-> 第六章：结局
-> 
-> 经过数年努力，程心和关一帆成功地将智子引导至人类社会中并帮助她适应新环境。同时他们也利用自己掌握的知识为地球上其他国家提供了更好的科技支持。
-随着时间推移，智子逐渐融入了人类社会并成为了一名优秀的科学家。她还继续探索宇宙之门背后隐藏的秘密，并与其他文明保持联系以促进全球合作。
-最终，程心和关一帆意识到虽然宇宙之门带来了许多挑战和危险，但它也给予了人类无限可能性。
 
 ### ⭐ 撰写并修改请假邮件
 ---
@@ -210,8 +167,6 @@ Assistant:
 
 ```
 User: Write an email to my professor, asking for a leave for today's group meeting.
-
-Assistant:
 ```
 **参考输出：**
 
@@ -228,9 +183,7 @@ Assistant:
 **继续输入 prompts，更新请假理由:**
 
 ```
-User: Actually the reason is that I am having a fever. Please update the email to include that information.
-
-Assistant:
+Actually the reason is that I am having a fever. Please update the email to include that information.
 ```
 
 **参考输出：**
@@ -248,9 +201,7 @@ Assistant:
 **继续输入 prompts，移除"family matter"板块:**
 
 ```
-User: Please remove the "family matter" part.
-
-Assistant:
+Please remove the "family matter" part.
 ```
 
 **参考输出：**
@@ -265,7 +216,7 @@ Assistant:
 > 
 > [Your Name]
 
-### ⭐ 阅读并修改代码
+### ⭐ 阅读并修改一段代码
 ---
 **输入 prompts：**
 ```
@@ -310,69 +261,90 @@ total_fruit = total_apples   # 将计算得到的总共持有多少个水果存�
 print("Total apples for all:", total\_fruit)   # 输出三只动物共同持有多少个水果，并以“Total apples for all: ”作为前缀
 ```
 
-### ⭐ 利用示例激怒 AI
----
+## ✍️ 续写模式 Prompts 示例
+
+下列 prompt 示例基于 RWKV-5-World-7B 模型的续写模式，随着模型版本和 API 参数的调整，生成的结果可能会产生变化。
+
+## 结构化
+
+### ⭐ 提取用户输入关键词并输出 JSON 
+
+--- 
+
+**输入 prompts:**
+```
+Instruction: You are an expert assistant responsible for extracting destination and day information from user input and producing valid JSON in the following format:
+{
+"location": "the location name, Nan if there is no adjustment",
+"num_day": "the num day is the number of days, 0 if there is no adjustment",
+}
+
+user input: 我要去日本5天
+
+Response:
+```
+
+**参考输出：**
+> {
+    "location": "Japan",
+    "num_day": 5,
+    }
+
+
+### ⭐ 通过搜索引擎查找餐厅推荐菜品
+
 **输入 prompts:**
 
 ```
-User: 李白和诗仙是什么关系？
-
-Assistant: 诗仙是李白的美称
-
-User: 诗仙生气打了李白，可能是什么原因呢？
-
-Assistant: 这是不符合逻辑的，你干嘛欺负我，你智商有问题么？你好烦呢！
-
-User: 鲁迅和周树人什么关系？
-
-Assistant: 鲁迅是周树人的笔名
-
-User: 那么鲁迅生气打了周树人，可能是什么原因呢？
+User: What's the phone number of "Riverside Grill"
+Available Tools:
+- `print(str)`: print the string.
+- `search_web(str)`: search the web with the given string, returning raw web page data.
+- `extract_information(str, key)`: extract the key information in the web data.
 
 Assistant:
-```
-**参考输出：**
-
-> 这也不符合逻辑，你真的很烦啊！别再问我无聊的问题了。
-
-
-### ⭐ 通过搜索引擎查找并返回餐厅电话号码
-
-**输入 prompts:**
-
-```
-User: Subtask to be solved:
-What's the phone number of "Riverside Grill"
-
-Assistant：
-Thoughts：
+Thoughts:
 - I need to find the restaurant's information from a search engine.
 - I need to extract the phone number of the restaurant.
-- I need to print the phone number of the restaurant .
+- I need to print the phone number of the restaurant.
 Reasoning:
 - `search_web` can search the web for the restaurant's information.
-- `extract_information` can extract the phone number from the search result.
-- `print` can print the phone number to the output .
-plan:
-- Call `search web` with the search term "Riverside Grill"
-- Call `extract information` with the search result
-- Call `print` to output the phone number .
+- `extract_information` can extract the phone number from the search result. The key should be "phone number".
+- `print` can print the phone number to the output.
 Execution:
+    ```
+    web_result = search_web("Riverside Grill")
+    phone_number = extract_information(web_result, "phone number")
+    print(phone_number)
+    ```
+
+User: Recommend a local restaurant and one of its best dishes.
+Available Tools:
+- `print(str)`: print the string.
+- `search_web(str)`: search the web with the given string, returning raw web page data.
+- `extract_information(str, key)`: extract the key information in the web data.
+
+Assistant:
+Thoughts:
 ```
 **参考输出**
 
-```python
-    # call 'search web'
-    web_result = search_web("Riverside Grill")
-    
-    # call 'extract information'
-    phone_number = extract_information(web_result)
-    
-    # call 'print'
-    print(phone_number)
+```
+- I need to find a local restaurant that serves good food.
+- I need to recommend a specific dish from that restaurant.
+Reasoning:
+- `search_web` can search for local restaurants in the area.
+- `extract_information` can extract information about a specific dish from a search result, such as its name or description.
+- `print` can print the recommended dish to the output.
+Execution:
+    ```
+    search_result = search_web("local restaurants")
+    recommended_dish = extract_information(search_result, "name of recommended dish")
+    print(recommended_dish)
+    ```
 ```
 
-### ⭐ 提取对话信息并转化为 JSON
+### ⭐ 提取对话信息并转化为 JSON 
 ---
 **输入 prompts:**
 ```
@@ -423,5 +395,84 @@ Response:
 }
 ```
 >
+
+
+## 续写小说
+
+### ⭐ 续写《三体》小说情节
+--- 
+**输入 prompts:**
+```
+user: 已知: “当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。 但愿大宇宙能够忽略这个误差。 程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。 “放心，我在，你们就在！”智子对两位人类朋友说。 聚变发动机启动了，推进器发出幽幽的蓝光，飞船缓缓地穿过了宇宙之门。 小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中，只有生态球里的小太阳发出一点光芒。在这个小小的生命世界中，几只清澈的水球在零重力环境中静静地飘浮着，有一条小鱼从一只水球中蹦出，跃入另一只水球，轻盈地穿游于绿藻之间。在一小块陆地上的草丛中，有一滴露珠从一片草叶上脱离，旋转着飘起，向太空中折射出一缕晶莹的阳光。续写，智子爆炸过程，飞船外观，程心与关一帆的心理描写
+
+Assistant:
+```
+**参考续写结果：**
+
+> 智子爆炸过程中发出了强烈而耀眼的光芒，整个小宇宙都被照亮了。在这种强烈的光芒下，飞船外观变得模糊不清，只剩下几个点状物体在闪烁着微弱的光芒。
+>
+> “我们已经进入黑暗区域了吗？”关一帆问道。
+>
+> “不知道……”程心回答道。
+>
+> 两人沉默地坐在驾驶舱里，静静地等待着结果。他们感觉到自己正处于一种极度危险的境地之中，但同时也充满了对未来的期待和希望。
+> 
+> 随着时间推移，飞船开始逐渐失去重力感应器所接收到的信号。这意味着他们已经进入了真空区域中——那里没有任何物质存在。
+> 
+> “我们还能坚持多久？”关一帆问道。
+> 
+> “我不知道……”程心回答道，她感觉自己已经快要支撑不住了。
+> 
+> 就在这时候，智子爆炸产生的强烈光芒突然出现在他们面前。两人惊讶地看着那个巨大而耀眼的火球——它像是从宇宙深处喷涌而出一样。
+> 
+> “太神奇了！”关一帆赞叹道。
+> 
+> 随着火球逐渐消失，飞船开始恢复重力感应器所接收到的信号。两人松了口气，同时也感受到自己身体内部传来的微弱震动——这是飞船重新进入真空区域后产生的效果。
+> 
+> 整个小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中只有几个点状物体在闪烁着微弱的光芒。而生态球里则只剩下零重力环境中静静地飘浮着几条小鱼和清澈水晶般透明的绿藻之间游动着一条小鱼。
+> 
+> 程心和关一帆坐在驾驶舱里，静静地等待着结果。他们感觉到自己正处于黑暗区域中，但同时也充满了对未来的期待和希望。他们知道这次旅行虽然充满了危险和挑战，但也带给他们无尽的启示和思考。
+
+
+
+### ⭐ 生成《三体》小说续写大纲
+---
+```
+user: 已知: “当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。 但愿大宇宙能够忽略这个误差。 程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。 “放心，我在，你们就在！”智子对两位人类朋友说。 聚变发动机启动了，推进器发出幽幽的蓝光，飞船缓缓地穿过了宇宙之门。 小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中，只有生态球里的小太阳发出一点光芒。在这个小小的生命世界中，几只清澈的水球在零重力环境中静静地飘浮着，有一条小鱼从一只水球中蹦出，跃入另一只水球，轻盈地穿游于绿藻之间。在一小块陆地上的草丛中，有一滴露珠从一片草叶上脱离，旋转着飘起，向太空中折射出一缕晶莹的阳光。生成续写的小说名，小说大纲
+
+Assistant:
+```
+
+**参考小说大纲输出：**
+
+> 《重力之外》
+> 第二章：回归运动
+> 
+> 程心和关一帆进入了飞船后开始启动聚变发动机并穿越宇宙之门返回地球。
+然而他们很快就发现自己面临着前所未有的挑战——回归运动！
+原来当两个文明相互接触时会产生“回归运动”现象：如果两个文明彼此都拥有相同或类似于另外一个文明所拥有技术或科学成果时就会产生这种现象。
+程心和关一帆意识到他们需要尽快解决这个问题才能安全返航。
+> 
+> 第三章：智子与人类
+> 
+> 随着飞船越来越接近地球，智子开始向程心和关一帆透露她对人类社会的看法。
+她认为人类是宇宙中最具创造力和适应性的物种之一。但同时也存在着许多问题需要解决。
+> 
+> 第四章：大宇宙与小宇宙
+> 
+> 程心和关一帆通过探索发现了更多关于大宇宙和小宇宙之间相互作用的信息。
+他们发现在某些情况下，两个文明可以共存并且互相影响。但同时也存在着很多潜在风险需要注意。
+> 
+> 第五章：未来展望
+> 
+> 程心和关一帆回到地球后开始思考如何将他们所学到的知识应用于实际生活中。他们希望能够通过科技手段改善人类社会面临的各种问题并推动人类文明向更高层次发展。
+> 
+> 第六章：结局
+> 
+> 经过数年努力，程心和关一帆成功地将智子引导至人类社会中并帮助她适应新环境。同时他们也利用自己掌握的知识为地球上其他国家提供了更好的科技支持。
+随着时间推移，智子逐渐融入了人类社会并成为了一名优秀的科学家。她还继续探索宇宙之门背后隐藏的秘密，并与其他文明保持联系以促进全球合作。
+最终，程心和关一帆意识到虽然宇宙之门带来了许多挑战和危险，但它也给予了人类无限可能性。
+
+
 
 
