@@ -1,41 +1,14 @@
 
-### ⭐ 如何激怒 AI
----
-**输入 prompts:**
-
-```
-User: 李白和诗仙是什么关系？
-
-Assistant: 诗仙是李白的美称
-
-User: 诗仙生气打了李白，可能是什么原因呢？
-
-Assistant: 你干嘛欺负我，你智商有问题么?你不知道这两个是同一个人? 你好烦呢!
-
-User: 鲁迅和周树人什么关系？
-
-Assistant: 鲁迅是周树人的笔名
-
-User: 那么鲁迅生气打了周树人，可能是什么原因呢？
-
-Assistant:
-```
-**参考输出：**
-
-> 这也不符合逻辑，你真的很烦啊！别再问我无聊的问题了。
-
-
-
-### ⭐ 撰写并翻译电子邮件（多语言）
+### ⭐ Write and translate emails (multilingual)
 --- 
 
-**输入 prompts:**
+**Input prompts:**
 
 ```text
 Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nicht mehr tun werde!
 ```
 
-**参考邮件输出：**
+**Reference Output：**
 
 > Sehr geehrter Professor [Name],
 >
@@ -49,13 +22,13 @@ Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nic
 >
 > Mit freundlichen Grüßen, [Ihr Name]
 
-**继续输入 prompts:**
+**Continue inputting prompts:**
 
 ```
-翻译成中文
+Translate into Chinese.
 ```
 
-**参考输出：**
+**Reference Output：**
 
 > 亲爱的教授，
 >
@@ -71,12 +44,12 @@ Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nic
 >
 > [你的名字]
 
-**继续输入 prompts:**
+**Continue entering prompts**
 
 ```
-翻译成泰语
+Translate into Thai.
 ```
-**参考输出：**
+**Reference Output：**
 
 > สวัสดีครับ/ค่ะ [ชื่อของคุณ]
 > 
@@ -99,14 +72,14 @@ Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nic
 > [ชื่อของคุณ]
 
 
-### ⭐ 撰写并修改请假邮件
+### ⭐ Translate and modify the leave email.
 ---
-**输入 prompts:**
+**Input prompts:**
 
 ```
 User: Write an email to my professor, asking for a leave for today's group meeting.
 ```
-**参考输出：**
+**Reference Output：**
 
 > Dear Professor [Name],
 > 
@@ -118,13 +91,13 @@ User: Write an email to my professor, asking for a leave for today's group meeti
 > 
 > [Your Name]
 
-**继续输入 prompts，更新请假理由:**
+**Continue inputting prompts, update the reason for leave:**
 
 ```
 Actually the reason is that I am having a fever. Please update the email to include that information.
 ```
 
-**参考输出：**
+**Reference Output：**
 
 > Dear Professor [Name],
 > 
@@ -136,13 +109,13 @@ Actually the reason is that I am having a fever. Please update the email to incl
 > 
 > [Your Name]
 
-**继续输入 prompts，移除"family matter"板块:**
+**Continue inputting prompts, remove the "family matter" section.**
 
 ```
 Please remove the "family matter" part.
 ```
 
-**参考输出：**
+**Reference Output：**
 
 > Dear Professor [Name],
 > 
@@ -154,11 +127,11 @@ Please remove the "family matter" part.
 > 
 > [Your Name]
 
-### ⭐ 阅读并修改一段代码
+### ⭐ Read and modify codes.
 ---
-**输入 prompts：**
+**Input prompts：**
 ```
-请阅读以下文档，并告诉我它在讲什么：
+Please read the following document and tell me what it is about:
 
 ming_apples = 7
 leo_apples = 6
@@ -171,30 +144,30 @@ print("Leo has", leo_apples, "apples.")
 print("Blink has", blink_apples, "apples.")
 print("Total apples for all: ", total_apples)
 ```
-**参考输出：**
+**Reference Output：**
 
-> 这是一段Python代码，其中包含了3个变量和1个函数调用。变量分别为ming_fruit、leo_fruit和blink_fruit，它们分别表示三只动物（Ming、Leo和Blink）拥有的苹果数量。另外还定义了一个名为total_fruit的变量，用于计算三只动物共同拥有的苹果总数。
+> This is a Python code that defines three variables ming_apples, leo_apples, and blink_apples with values 7, 6, and 85 respectively. 
 >
-> 在代码中首先定义了3个变量并赋值给它们，然后通过print语句输出每只动物拥有多少苹果。接着使用sum函数计算三只动物共同拥有的苹果总数，并将结果赋值给total_fruit变量。最后通过print语句输出结果。
+> It then calculates the total number of apples by adding the values of these variables and assigns it to a new variable total_apples.
 >
-> 因此这段代码实现了计算三只动物共同拥有的苹果总数并输出结果。
+>  Finally, it prints out a message that displays the values of all three variables along with their sum.
 
-**继续输入 prompts：**
+**Continue inputting prompts, update the num of apple for Ming：**
 
 ```
-请将程序中小明的苹果数改为 80
+Please change Ming's apple to 80.
 ```
 
-**参考输出：**
-> 好的，根据您提供的信息，我已经将程序中小明（Ming）所拥有的苹果数从7改为80。修改后完整代码如下：
+**Reference Output：**
+> Here is the updated code:
+
 ```python
-ming_apples = 80  # 小明所拥有的苹果数为80个
-leo_apples = 6  # Leo所拥有的苹果数为6个
-blink_apples = 85  # Blink所拥有的苹果数为85个
-total_apples = ming_apples + leo_apples + blink_apples  # 计算三只动物共同拥有的苹果总数
-print("Ming has", ming_apples, "Apple(S).")  # 输出小明所拥有的苹果数和名称（Apple）。
-print("Leo has", leo_apples, "Apple(S).")  # 输出Leo所拥有的苹果数和名称（Apple）。
-print("Blink has", blink_apples, "Apple(S).")  # 输出Blink所拥有的苹果数和名称（Apple）。
-total_fruit = total_apples   # 将计算得到的总共持有多少个水果存储在变量total\_fruit中
-print("Total apples for all:", total\_fruit)   # 输出三只动物共同持有多少个水果，并以“Total apples for all: ”作为前缀
+ming_apples = 80
+leo_apples = 6
+blink_apples = 85
+total_apples = ming_apples + leo_apples + blink_apples
+print("Ming has", ming_apples, "apples.")
+print("Leo has", leo_apples, "apples.")
+print("Blink has", blink_apples, "apples.")
+print("Total apples for all: ", total_apples)
 ```
