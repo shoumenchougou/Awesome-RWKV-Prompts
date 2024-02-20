@@ -241,77 +241,25 @@ Assistant:
 
 ## 📖 Continue writing the novel
 
-### ⭐ 续写《三体》小说情节
---- 
-**Input prompts:**
-```
-user: 已知: “当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。 但愿大宇宙能够忽略这个误差。 程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。 “放心，我在，你们就在！”智子对两位人类朋友说。 聚变发动机启动了，推进器发出幽幽的蓝光，飞船缓缓地穿过了宇宙之门。 小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中，只有生态球里的小太阳发出一点光芒。在这个小小的生命世界中，几只清澈的水球在零重力环境中静静地飘浮着，有一条小鱼从一只水球中蹦出，跃入另一只水球，轻盈地穿游于绿藻之间。在一小块陆地上的草丛中，有一滴露珠从一片草叶上脱离，旋转着飘起，向太空中折射出一缕晶莹的阳光。续写，智子爆炸过程，飞船外观，程心与关一帆的心理描写
-
-Assistant:
-```
-**参考续写结果：**
-
-> 智子爆炸过程中发出了强烈而耀眼的光芒，整个小宇宙都被照亮了。在这种强烈的光芒下，飞船外观变得模糊不清，只剩下几个点状物体在闪烁着微弱的光芒。
->
-> “我们已经进入黑暗区域了吗？”关一帆问道。
->
-> “不知道……”程心回答道。
->
-> 两人沉默地坐在驾驶舱里，静静地等待着结果。他们感觉到自己正处于一种极度危险的境地之中，但同时也充满了对未来的期待和希望。
-> 
-> 随着时间推移，飞船开始逐渐失去重力感应器所接收到的信号。这意味着他们已经进入了真空区域中——那里没有任何物质存在。
-> 
-> “我们还能坚持多久？”关一帆问道。
-> 
-> “我不知道……”程心回答道，她感觉自己已经快要支撑不住了。
-> 
-> 就在这时候，智子爆炸产生的强烈光芒突然出现在他们面前。两人惊讶地看着那个巨大而耀眼的火球——它像是从宇宙深处喷涌而出一样。
-> 
-> “太神奇了！”关一帆赞叹道。
-> 
-> 随着火球逐渐消失，飞船开始恢复重力感应器所接收到的信号。两人松了口气，同时也感受到自己身体内部传来的微弱震动——这是飞船重新进入真空区域后产生的效果。
-> 
-> 整个小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中只有几个点状物体在闪烁着微弱的光芒。而生态球里则只剩下零重力环境中静静地飘浮着几条小鱼和清澈水晶般透明的绿藻之间游动着一条小鱼。
-> 
-> 程心和关一帆坐在驾驶舱里，静静地等待着结果。他们感觉到自己正处于黑暗区域中，但同时也充满了对未来的期待和希望。他们知道这次旅行虽然充满了危险和挑战，但也带给他们无尽的启示和思考。
-
-
-
-### ⭐ 生成《三体》小说续写大纲
+### ⭐ Generate an outline for a sequel to the "Three-Body Problem" novel.
 ---
 ```
-user: 已知: “当然可以，大宇宙不会因为这五公斤就不坍缩了。”关一帆说，他还有一个没说出来的想法：也许大宇宙真的会因为相差一个原子的质量而由封闭转为开放。大自然的精巧有时超出想象，比如生命的诞生，就需要各项宇宙参数在几亿亿分之一精度上的精确配合。但程心仍然可以留下她的生态球，因为在那无数文明创造的无数小宇宙中，肯定有相当一部分不响应回归运动的号召，所以，大宇宙最终被夺走的质量至少有几亿吨，甚至可能是几亿亿亿吨。 但愿大宇宙能够忽略这个误差。 程心和关一帆进入了飞船，智子最后也进来了。她早就不再穿那身华丽的和服了，她现在身着迷彩服，再次成为一名轻捷精悍的战士，她的身上佩带着许多武器和生存装备，最引人注目的是那把插在背后的武士刀。 “放心，我在，你们就在！”智子对两位人类朋友说。 聚变发动机启动了，推进器发出幽幽的蓝光，飞船缓缓地穿过了宇宙之门。 小宇宙中只剩下漂流瓶和生态球。漂流瓶隐没于黑暗里，在一千米见方的宇宙中，只有生态球里的小太阳发出一点光芒。在这个小小的生命世界中，几只清澈的水球在零重力环境中静静地飘浮着，有一条小鱼从一只水球中蹦出，跃入另一只水球，轻盈地穿游于绿藻之间。在一小块陆地上的草丛中，有一滴露珠从一片草叶上脱离，旋转着飘起，向太空中折射出一缕晶莹的阳光。生成续写的小说名，小说大纲
+user: Known:“Of course,” said Guan Yifan. “The great universe isn’t going to fail to collapse because it misses five kilograms.” He had another thought that he did not voice: Perhaps the great universe really would fail to collapse because it lacked a single atom’s mass. The precision of Nature can sometimes exceed the imagination. For instance, life itself required the precise collaboration of various universal constants within a billion-billionth of a certain range. But Cheng Xin could still leave behind her ecological sphere. Out of all the countless mini-universes created by the countless civilizations, it was certain that some number of them would not heed the call of the Returners. Ultimately, the great universe was certain to lose at least a few hundred million tons of matter, or perhaps even a million billion billion tons.Hopefully, the great universe could ignore such a loss.Cheng Xin and Guan Yifan entered the spaceship, and Sophon came in last. She had long ceased wearing her magnificent kimono and turned once again into that lean and nimble warrior dressed in camouflage. She had all sorts of weapons and survival gear strapped to her body, the most prominent being the katana on her back.“Don’t worry,” she said to her two human friends. “As long as I’m alive, no harm will come to you.”The fusion drive activated and the thrusters emitted a dim blue light. The spaceship slowly went through the door of the universe.The message in a bottle and the ecological sphere were the only things left in the mini-universe. The bottle faded into the darkness so, in this one-cubic-kilometer universe, only the little sun inside the ecological sphere gave off any light. In this minuscule world of life, a few clear watery spheres drifted serenely in weightlessness. One tiny fish leapt out of a watery sphere and entered another, where it effortlessly swam between the green algae. On a blade of grass on one of the miniature continents, a drop of dew took off from the tip of the grass blade, rose spiraling into the air, and refracted a clear ray of sunlight into space.Generate a sequel novel's title and outline.
 
 Assistant:
 ```
 
-**参考小说大纲输出：**
+**Reference Output：**
 
-> 《重力之外》
-> 第二章：回归运动
+> **Title: "Returners"**
 > 
-> 程心和关一帆进入了飞船后开始启动聚变发动机并穿越宇宙之门返回地球。
-然而他们很快就发现自己面临着前所未有的挑战——回归运动！
-原来当两个文明相互接触时会产生“回归运动”现象：如果两个文明彼此都拥有相同或类似于另外一个文明所拥有技术或科学成果时就会产生这种现象。
-程心和关一帆意识到他们需要尽快解决这个问题才能安全返航。
+> **Outline:**
 > 
-> 第三章：智子与人类
+> 1. **Introduction** - A group of Returners from various time periods return to Earth with an ecological sphere containing billions of biological specimens from different eras, including animals, plants, microorganisms, and even viruses. They are accompanied by an AI named Sophon who is tasked with protecting them during their journey back through time.
 > 
-> 随着飞船越来越接近地球，智子开始向程心和关一帆透露她对人类社会的看法。
-她认为人类是宇宙中最具创造力和适应性的物种之一。但同时也存在着许多问题需要解决。
+> 2. **Meeting with history** - The Returners meet various historical figures such as Marco Polo, Joan of Arc, Albert Einstein, and Nikola Tesla among others. They also encounter many obstacles along the way such as hostile civilizations or environmental disasters that threaten their mission.
 > 
-> 第四章：大宇宙与小宇宙
+> 3. **Battle for survival** - As they travel through time, the Returners face numerous challenges such as limited resources and dangerous situations that threaten their lives. They must rely on each other's skills and knowledge to survive in this new world while trying to complete their mission of returning everything safely back to its proper place in history.
 > 
-> 程心和关一帆通过探索发现了更多关于大宇宙和小宇宙之间相互作用的信息。
-他们发现在某些情况下，两个文明可以共存并且互相影响。但同时也存在着很多潜在风险需要注意。
-> 
-> 第五章：未来展望
-> 
-> 程心和关一帆回到地球后开始思考如何将他们所学到的知识应用于实际生活中。他们希望能够通过科技手段改善人类社会面临的各种问题并推动人类文明向更高层次发展。
-> 
-> 第六章：结局
-> 
-> 经过数年努力，程心和关一帆成功地将智子引导至人类社会中并帮助她适应新环境。同时他们也利用自己掌握的知识为地球上其他国家提供了更好的科技支持。
-随着时间推移，智子逐渐融入了人类社会并成为了一名优秀的科学家。她还继续探索宇宙之门背后隐藏的秘密，并与其他文明保持联系以促进全球合作。
-最终，程心和关一帆意识到虽然宇宙之门带来了许多挑战和危险，但它也给予了人类无限可能性。
+> 4. **A second chance at life** - The Returners encounter many alternate versions of themselves from different timelines which allows them to gain insight into how things could have gone differently if certain decisions were made differently or if certain events had not occurred at all. This provides them with valuable lessons that help guide them towards achieving their goal while also giving them a sense of closure on some unresolved issues from previous timelines they've encountered along the way back through time.
 
