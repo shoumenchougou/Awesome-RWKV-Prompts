@@ -6,7 +6,9 @@
 
 RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
 
-RWKV 模型的最新版本是 [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth)。
+RWKV 模型的最新版本是 [RWKV-6](https://huggingface.co/BlinkDL/rwkv-6-world)，架构图如下：
+
+![image](./_media/rwkv-x060.jpg ':size=500')
 
 ## Hugging Face Gradio 用法
 --- 

@@ -1,12 +1,14 @@
 Welcome to "Awesome-RWKV-Prompts"! We provide best practices for RWKV prompts and invite everyone to submit their own well-crafted RWKV prompt practices to the repository.
 
+Every RWKV prompt example in this repository is ready to use. You can copy the prompt examples from the code blocks and paste them into any RWKV client(Such as [RWKV Runner](https://github.com/josStorer/RWKV-Runner) , [RWKV-AI00-server](https://github.com/cgisky1980/ai00_rwkv_server)) for immediate use.
+
 ## About RWKV LLM
 
 [RWKV](https://www.rwkv.com/) is an innovative 100% attention-free deep learning network architecture that combines the strengths of both Transformer and RNN, achieving highly parallelized training and efficient inference.
 
-The latest version of the RWKV model is [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth).
+The latest version of the RWKV model is [RWKV-6](https://huggingface.co/BlinkDL/rwkv-6-world)，here is the RWKV v6 illustrated：
 
-Every RWKV prompt example in this repository is ready to use. You can copy the prompt examples from the code blocks and paste them into any RWKV client(Such as [RWKV Runner](https://github.com/josStorer/RWKV-Runner) , [RWKV-server](https://github.com/cgisky1980/ai00_rwkv_server)) for immediate use.
+![image](../_media/rwkv-x060.jpg ':size=500')
 
 ## Usage about Hugging Face Gradio
 --- 

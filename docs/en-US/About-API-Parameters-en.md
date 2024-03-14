@@ -24,7 +24,7 @@ Recommended parameter configurations are provided for different tasks:
 - Temperature 1.2, Top_P 0.5
 - Temperature 1.4, Top_P 0.4
 - Temperature 1.4, Top_P 0.3
-- Temperature 1.4, Top_P 0.2
+- Temperature 2, Top_P 0.2
 
 **For relatively mechanical tasks** such as material-based questions, article summaries, etc., you can set the parameters as:
 
