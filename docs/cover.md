@@ -10,7 +10,7 @@
 > 
 > 也欢迎大家将自己创建的良好 RWKV Prompts 实践提交到仓库中。
 
-</div>
 
 [GitHub](https://github.com/shoumenchougou/Awesome-RWKV-Prompts)
 [Get Started](README.md)
+[en-version](./en-US/README-en.md)

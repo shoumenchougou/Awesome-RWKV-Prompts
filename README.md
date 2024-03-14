@@ -6,6 +6,12 @@ RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Tr
 
 此仓库的所有 RWKV prompt 示例都是开箱即用的，你可以复制代码块中的 prompt 示例，然后在任意 RWKV 客户端中粘贴使用。
 
+我们建议在 GitHub Page 中阅览 RWKV-Prompts：
+
+- [**中文版本 RWKV-Prompts**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/)
+
+- [**RWKV-Prompts for English**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/#/./en-US/README-en)
+
 --- 
 > ⚠️**由于 Hugging Face 的 RWKV 在线演示是续写模型，如果你在 [Hugging Face gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 中体验 RWKV 模型，建议按以下格式输入 prompts :**
 >
