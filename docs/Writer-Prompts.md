@@ -1,4 +1,31 @@
 
+### 根据标题撰写视频文案
+
+**输入 prompts:**
+
+```
+Instruction: 根据我给定的标题，写出一个生动的视频文案：
+
+Input: 新手必须知道的微信公众号基础功能搭建方法
+
+Response:
+```
+**参考输出：**
+
+> 大家好，我是小编，今天给大家分享一下微信公众号基础功能搭建方法。
+> 
+> 首先，我们需要在微信公众平台注册账号并进行认证。认证完成后，我们就可以开始创建自己的公众号了。
+> 
+> 接下来，我们需要选择适合自己的模板和主题。模板和主题可以让你的公众号看起来更加专业和美观。
+> 
+> 然后，我们需要填写一些基本信息，包括名称、简介、联系方式等等。这些信息会出现在你的公众号首页上。
+> 
+> 接着，我们需要设置菜单栏和底部导航栏。这些功能可以让你的用户更加方便地浏览你的内容。
+> 
+> 最后，我们还需要添加一些图片、视频等素材来丰富你的内容。这样可以让你的公众号更加生动有趣。
+> 
+> 总之，微信公众平台提供了很多基础功能供用户使用。如果你想成为一名优秀的微信营销人员，那么就需要掌握这些基础功能并灵活运用它们。
+
 ### ⭐ 通过“报酬”激励模型撰写论文
 ---
 **输入 prompts:**
@@ -86,6 +113,166 @@ Assistant: 好的，
 
 
 
+
+### 根据餐饮评价进行打分
+**输入 prompts:**
+```
+Instruction: 美团中餐厅评价, 以1至5星进行评定
+
+Input: 状元楼饭店第一次去,因为地理位置优越:在宁波市和义大道高、大、上,里面装修中式,菜是地道的宁波菜,口味纯正,醉泥螺特棒,吃到了小时候的味道,因为去了晚了,在大堂等了一会儿,期间有茶水喝、服务员还与你聊天,到了就餐时生意太好,服务员都是小跑状,服务态度绝对不提速,样样都服务到位,点酒水还耐心的与我们解释,就这样绝对要夸一夸,特别是彭新星、洪继华(看服务牌才知道名字)也给我们宁波市形象增色,状元楼是宁波的一扇窗口,服务员的素质更体现我们宁波人的精神面貌。赞一个
+
+Response:
+```
+**参考输出：**
+> 4
+
+## 自然语言处理
+
+### 自然语言处理（情感分类）
+
+**输入 prompts:**
+```
+Instruction: 请判断下面句子的情感倾向，情感类型包括: 负向、正向。
+请直接输出类型名称，不要额外输出多余内容。
+
+Input: 服务和环境都不错……
+
+Response:
+```
+**参考输出：**
+> 正向
+
+### 自然语言处理（情感分类）
+
+**输入 prompts:**
+```
+Instruction: 对中文外卖应用客户评价进行情感分类，0为消极，1为积极
+
+Input: 粉送來的時候已經「斷」完了，跟米飯一樣，唉，有些失望?
+
+Response:
+```
+**参考输出：**
+> 0
+
+### 自然语言处理（相似度分类）
+
+**输入 prompts:**
+```
+Instruction: 请判断下面两句话在语义上是否相似。
+请直接输出“是”或“否”，不要额外输出多余内容。
+
+Input: 句子1：剧烈运动后咯血,是怎么了?
+句子2：剧烈运动后为什么会咯血？
+
+Response:
+```
+**参考输出：**
+> 是
+
+### 自然语言处理（文本蕴涵识别）
+
+**输入 prompts:**
+```
+Instruction: 假设你正在执行自然语言推理任务，那么请判断下文中，前提和假设之间的关系：
+
+Input: 前提：一月份跟二月份肯定有一个月份有.
+假设：肯定有一个月份有
+
+Response:
+```
+**参考输出：**
+> 蕴含
+
+### 自然语言处理（文本分类）
+
+**输入 prompts:**
+```
+Instruction: 对给出的句子判断其主题,以{"LABEL": label}的格式作答。短文以sentence:<>格式给出,可选择的类别有: story, culture, entertainment, sports, finance, house, car, education, tech, military, travel, world, stock, agriculture, game.
+
+Input: sentence:<上课时学生手机响个不停，老师一怒之下把手机摔了，家长拿发票让老师赔，大家怎么看待这种事？>
+
+Response:
+```
+**参考输出：**
+> {"LABEL": education}
+
+### 自然语言处理（情绪检测）
+
+**输入 prompts:**
+```
+Instruction: 在这个任务中，你需要对给定的文本进行情感倾向分类。输入将提供一段中文文本，而你需要判断它的情感倾向是积极、消极还是中性。
+
+Input: 写在年末冬初孩子流感的第五天，我们仍然没有忘记热情拥抱这2020年的第一天。带着一丝迷信，早晨给孩子穿上红色的羽绒服羽绒裤，祈祷新的一年，孩子们身体康健。仍然会有一丝焦虑，焦虑我的孩子为什么会过早的懂事，从两岁多开始关注我的情绪，会深沉地说：妈妈，你终于笑了！这句话像刀子一样扎入我?展开全文
+
+Response:
+```
+**参考输出：**
+> 中性
+
+### 自然语言处理（机器阅读理解）
+
+**输入 prompts:**
+```
+Instruction: 请首先阅读以下文本信息，然后回答问题。问题的答案应该在文本中能找到，是一句话的形式。
+
+Input: 文本：
+《战国无双3》（）是由光荣和ω-force开发的战国无双系列的正统第三续作。本作以三大故事为主轴，分别是以武田信玄等人为主的《关东三国志》，织田信长等人为主的《战国三杰》，石田三成等人为主的《关原的年轻武者》，丰富游戏内的剧情。此部份专门介绍角色，欲知武器情报、奥义字或擅长攻击类型等，请至战国无双系列1.由于乡里大辅先生因故去世，不得不寻找其他声优接手。从猛将传 and Z开始。2.战国无双 编年史的原创男女主角亦有专属声优。此模式是任天堂游戏谜之村雨城改编的新增模式。本作中共有20张战场地图（不含村雨城），后来发行的猛将传再新增3张战场地图。但游戏内战役数量繁多，部分地图会有兼用的状况，战役虚实则是以光荣发行的2本「战国无双3 人物真书」内容为主，以下是相关介绍。（注：前方加☆者为猛将传新增关卡及地图。）合并本篇和猛将传的内容，村雨城模式剔除，战国史模式可直接游玩。主打两大模式「战史演武」&「争霸演武」。系列作品外传作品
+问题：
+《战国无双3》是由哪两个公司合作开发的？
+
+Response:
+```
+**参考输出：**
+> 光荣和ω-force
+
+### 自然语言处理（触发词识别）
+
+**输入 prompts:**
+```
+Instruction: 请从下面的文本中识别出事件的触发词,文本内容以text:<>给出,输出结果以{'TRIGGERS':trigger1, trigger2...}的形式给出
+
+Input: text:<原标题：万讯自控(7.490,-0.10,-1.32%)：傅宇晨解除部分股份质押、累计质押比例为39.55%    来源：每日经济新闻
+每经AI快讯，万讯自控（SZ 300112，收盘价：7.49元）6月3日下午发布公告称，公司接到股东傅宇晨的通知，获悉傅宇晨将其部分股份办理了质押业务。截至本公告日，傅宇晨共持有公司股份5790.38万股，占公司总股本的20.25%；累计质押股份2290万股，占傅宇晨持有公司股份总数的39.55%，占公司总股本的8.01%。
+2019年年报显示，万讯自控的主营业务为工业自动控制行业，占营收比例为：99.05%。
+万讯自控的董事长是傅宇晨，男，57岁，中国籍，无境外永久居留权，工学学士，高级工商管理硕士，自动化仪表工程师。 万讯自控的总经理是傅晓阳，男，49岁，中国籍，无境外永久居留权，工学学士。
+(记者 曾剑)>
+
+Response:
+```
+**参考输出：**
+> {"TRIGGERS":质押}
+
+### 自然语言处理（理解对话问答）
+
+**输入 prompts:**
+```
+Instruction: 根据男和女的对话，以及问题，从选项中选出答案。请以{"答案": " "}的格式作答。
+
+Input: {"对话": "['男：你今天晚上有时间吗?我们一起去看电影吧?', '女：你喜欢恐怖片和爱情片，但是我喜欢喜剧片，科幻片一般。所以……']"
+"问题": "女的最喜欢哪种电影?"
+"选项": "['恐怖片', '爱情片', '喜剧片', '科幻片']"}
+
+Response:
+```
+**参考输出：**
+> {"答案": "喜剧片"}
+
+
+### 自然语言处理（文本主题分类）
+
+**输入 prompts:**
+```
+Instruction: 请判断下面的句子属于哪个类别，类别包括文化、娱乐、体育、财经、房产、汽车、教育、科技、军事、旅游、国际、证券、农业、电竞、民生。
+请直接输出类别，不要额外输出多余内容。
+
+Input: 私募大佬抛弃了谁？
+
+Response:
+```
+**参考输出：**
+> 财经
+
 ## 结构化
 
 ### ⭐ 提取用户输入关键词并输出 JSON 
@@ -111,59 +298,6 @@ Response:
 "location": "上海",
 "num_day": "2",
 }
-```
-
-### ⭐ 通过搜索引擎查找餐厅推荐菜品
-
-**输入 prompts:**
-
-```
-User: What's the phone number of "Riverside Grill"
-Available Tools:
-- `print(str)`: print the string.
-- `search_web(str)`: search the web with the given string, returning raw web page data.
-- `extract_information(str, key)`: extract the key information in the web data.
-
-Assistant:
-Thoughts:
-- I need to find the restaurant's information from a search engine.
-- I need to extract the phone number of the restaurant.
-- I need to print the phone number of the restaurant.
-Reasoning:
-- `search_web` can search the web for the restaurant's information.
-- `extract_information` can extract the phone number from the search result. The key should be "phone number".
-- `print` can print the phone number to the output.
-Execution:
-    ```
-    web_result = search_web("Riverside Grill")
-    phone_number = extract_information(web_result, "phone number")
-    print(phone_number)
-    ```
-
-User: Recommend a local restaurant and one of its best dishes.
-Available Tools:
-- `print(str)`: print the string.
-- `search_web(str)`: search the web with the given string, returning raw web page data.
-- `extract_information(str, key)`: extract the key information in the web data.
-
-Assistant:
-Thoughts:
-```
-**参考输出**
-
-```
-- I need to find a local restaurant that serves good food.
-- I need to recommend a specific dish from that restaurant.
-Reasoning:
-- `search_web` can search for local restaurants in the area.
-- `extract_information` can extract information about a specific dish from a search result, such as its name or description.
-- `print` can print the recommended dish to the output.
-Execution:
-    ```
-    search_result = search_web("local restaurants")
-    recommended_dish = extract_information(search_result, "name of recommended dish")
-    print(recommended_dish)
-    ```
 ```
 
 ### ⭐ 提取对话信息并输出 JSON 
@@ -251,6 +385,60 @@ Assistant:
 {
 "keywords": ["英伟达","英特尔","先进封装","AI芯片","供应紧张","高级封装服务","台积电","HBM3","云端服务商"]
 }
+    ```
+```
+## function call
+
+### ⭐ 通过搜索引擎查找餐厅推荐菜品
+
+**输入 prompts:**
+
+```
+User: What's the phone number of "Riverside Grill"
+Available Tools:
+- `print(str)`: print the string.
+- `search_web(str)`: search the web with the given string, returning raw web page data.
+- `extract_information(str, key)`: extract the key information in the web data.
+
+Assistant:
+Thoughts:
+- I need to find the restaurant's information from a search engine.
+- I need to extract the phone number of the restaurant.
+- I need to print the phone number of the restaurant.
+Reasoning:
+- `search_web` can search the web for the restaurant's information.
+- `extract_information` can extract the phone number from the search result. The key should be "phone number".
+- `print` can print the phone number to the output.
+Execution:
+    ```
+    web_result = search_web("Riverside Grill")
+    phone_number = extract_information(web_result, "phone number")
+    print(phone_number)
+    ```
+
+User: Recommend a local restaurant and one of its best dishes.
+Available Tools:
+- `print(str)`: print the string.
+- `search_web(str)`: search the web with the given string, returning raw web page data.
+- `extract_information(str, key)`: extract the key information in the web data.
+
+Assistant:
+Thoughts:
+```
+**参考输出**
+
+```
+- I need to find a local restaurant that serves good food.
+- I need to recommend a specific dish from that restaurant.
+Reasoning:
+- `search_web` can search for local restaurants in the area.
+- `extract_information` can extract information about a specific dish from a search result, such as its name or description.
+- `print` can print the recommended dish to the output.
+Execution:
+    ```
+    search_result = search_web("local restaurants")
+    recommended_dish = extract_information(search_result, "name of recommended dish")
+    print(recommended_dish)
     ```
 ```
 

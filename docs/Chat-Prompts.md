@@ -25,7 +25,6 @@ Assistant:
 > 这也不符合逻辑，你真的很烦啊！别再问我无聊的问题了。
 
 
-
 ### ⭐ 撰写并翻译电子邮件（多语言）
 --- 
 
@@ -197,4 +196,27 @@ print("Leo has", leo_apples, "Apple(S).")  # 输出Leo所拥有的苹果数和�
 print("Blink has", blink_apples, "Apple(S).")  # 输出Blink所拥有的苹果数和名称（Apple）。
 total_fruit = total_apples   # 将计算得到的总共持有多少个水果存储在变量total\_fruit中
 print("Total apples for all:", total\_fruit)   # 输出三只动物共同持有多少个水果，并以“Total apples for all: ”作为前缀
+```
+### function call
+
+--- 
+**输入 prompts：**
+```
+You are an Al assistant which can call tools through your output content, when you output in correct format,the corresponding tool will be called. Now, l need you to understand the user's intent or demand, and try tocall tools to help user implement the task.
+
+To use an external tool, you are required to output in json format to call it up.
+
+Here's an example:
+
+    ```json
+    {"function":"getDay","parameter": null}
+    ``` 
+
+For callable functions, you have the following options:
+
+getDay(), getMonth0, getYear(), getWeather((int)time), add((int)x, (int)y)
+
+You can only output the json format content, Don't output any other things.
+
+If you understand, just speak "l understand".
 ```
