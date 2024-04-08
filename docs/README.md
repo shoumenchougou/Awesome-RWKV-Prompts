@@ -2,13 +2,17 @@
 
 此仓库的所有 RWKV prompt 示例都是开箱即用的，你可以复制代码块中的 prompt 示例，然后在任意 RWKV 客户端(如 [RWKV Runner](https://github.com/josStorer/RWKV-Runner) 、[RWKV-AI00-server](https://github.com/cgisky1980/ai00_rwkv_server))中粘贴使用。
 
-## 关于 RWKV 模型
+## 如何体验 RWKV 模型
 
-RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
+如果你希望在本地部署 RWKV 模型，我们建议采用以下两种工具：
 
-RWKV 模型的最新版本是 [RWKV-6](https://huggingface.co/BlinkDL/rwkv-6-world)，架构图如下：
+- [**RWKV Runner**](https://github.com/josStorer/RWKV-Runner)：由社区成员 josStorer 开发的 RWKV 模型启动和管理工具，支持 LoRA 微调等多种功能，可以在 NVIDIA、AMD、Intel 等显卡上运行。
+- [**AI00 RWKV Server**](https://github.com/Ai00-X/ai00_server):一个基于 RWKV 模型的推理 API 服务器，基于 WEB-RWKV 推理引擎进行开发。AI00 Server 支持 Vulkan/Dx12/OpenGL 作为推理后端，无需臃肿的 pytorch、CUDA 等运行环境，小巧身材，开箱即用！
 
-![image](./_media/rwkv-x060.jpg ':size=500')
+如果你只是想简单尝试一下 RWKV 模型，可以尝试由 RWKV 官方部署在 Hugging Face 的公共 Demo：
+
+- [**RWKV-5 7B**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-5 。
+- [**RWKV-6 1.6B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新发布的 RWKV 6 架构模型。
 
 ## Hugging Face Gradio 用法
 --- 
@@ -32,3 +36,10 @@ Input:（你希望模型处理的内容，比如“hur l?ng tid tog det att bygg
 
 Response:
 ```
+## 关于 RWKV 模型
+
+RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
+
+RWKV 模型的最新版本是 [RWKV-6](https://huggingface.co/BlinkDL/rwkv-6-world)，架构图如下：
+
+![image](./_media/rwkv-x060.jpg ':size=500')

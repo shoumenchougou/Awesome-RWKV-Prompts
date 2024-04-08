@@ -2,7 +2,9 @@
 
 欢迎来到 “Awesome-RWKV-Prompts” ！我们在此提供基于 RWKV 的 Prompts 最佳实践，也欢迎大家将自己创建的良好 RWKV Prompts 实践提交到仓库中。
 
-RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。RWKV 模型的最新版本是 [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth)。
+RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
+
+RWKV 模型的当前稳定版本是 [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth)，最新版本是 [RWKV-6-World 1B6 v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/blob/main/RWKV-x060-World-1B6-v2.1-20240328-ctx4096.pth)。（RWKV-6-World 1B6 v2.0 使用 1.， v2.1 版本使用 2.5T tokens 训练）。
 
 此仓库的所有 RWKV prompt 示例都是开箱即用的，你可以复制代码块中的 prompt 示例，然后在任意 RWKV 客户端中粘贴使用。
 
@@ -13,9 +15,21 @@ RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Tr
 - [**RWKV-Prompts for English**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/#/./en-US/README-en)
 
 --- 
-## Hugging Face Gradio 用法
+## 如何体验 RWKV 模型
 
-> ⚠️**由于 Hugging Face 的 RWKV 在线演示是续写模型，如果你在 [Hugging Face gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 中体验 RWKV 模型，建议按以下格式输入 prompts :**
+如果你希望在本地部署 RWKV 模型，我们建议采用以下两种工具：
+
+- [**RWKV Runner**](https://github.com/josStorer/RWKV-Runner)：由社区成员 josStorer 开发的 RWKV 模型启动和管理工具，支持 LoRA 微调等多种功能，可以在 NVIDIA、AMD、Intel 等显卡上运行。
+- [**AI00 RWKV Server**](https://github.com/Ai00-X/ai00_server):一个基于 RWKV 模型的推理 API 服务器，基于 WEB-RWKV 推理引擎进行开发。AI00 Server 支持 Vulkan/Dx12/OpenGL 作为推理后端，无需臃肿的 pytorch、CUDA 等运行环境，小巧身材，开箱即用！
+
+如果你只是想简单尝试一下 RWKV 模型，可以尝试以下部署在 HF Gradio 的公共 Demo：
+
+- [**RWKV-5 7B**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-5 。
+- [**RWKV-6 1.6B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新发布的 RWKV 6 架构模型。
+
+### Hugging Face Gradio 用法
+
+> ⚠️**由于 Hugging Face 的 RWKV 在线演示是续写模型，如果你在 [Hugging Face gradio](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 中体验 RWKV 模型，建议按以下两种格式输入 prompts :**
 >
 ```
 User: hi
@@ -26,10 +40,19 @@ User: (你的问题)
 
 Assistant:
 ```
+或者：
+```
+
+Instruction: （你希望模型进行什么操作，比如“请将下列瑞典语翻译成中文”）
+
+Input:（你希望模型处理的内容，比如“hur l?ng tid tog det att bygga twin towers”）
+
+Response:
+```
 ---
 ## 参数设置
 
-此仓库中的 prompt 示例使用 RWKV-5-7B-World 模型，随着模型版本和参数的调整，生成的结果可能会产生变化。
+此仓库中的 prompt 示例基于 RWKV-5-7B-World 模型，随着模型版本和参数的调整，生成的结果可能会产生变化。
 
 你可以通过调整 API 参数改变示例 Prompts 的生成效果。
 
