@@ -1,5 +1,31 @@
 
+### ⭐ 多语言互相翻译
+
+在执行翻译任务时，可以通过适当降低 Temperature 和 Top-P 两项参数使翻译结果更准确。比如 Temperature = 0.9 - 1 , Top-P = 0 - 0.2 。
+
+**输入 prompts:**
+```
+Japanese: 春の初め、桜の花が満開になる頃、小さな町の片隅にある古びた神社の境内は、特別な雰囲気に包まれていた。
+
+English:
+```
+**参考输出：**
+> In the early spring, when the cherry blossoms were in full bloom, a small shrine in a remote corner of a town was enveloped in an atmosphere of special charm.
+
+可以将“Japanese” 和 “English” 修改成其他语言，实现国际语言的翻译，例如：
+
+**输入 prompts:**
+```
+English:In the early spring, when the cherry blossoms were in full bloom, a small shrine in a remote corner of a town was enveloped in an atmosphere of special charm.
+
+Spanish:
+```
+**参考输出：**
+> En la primavera temprana, cuando las cerezas estaban en plena floración, un pequeño santuario en un rincón de una ciudad era envuelto por una atmósfera especialmente encantadora.
+
 ### ⭐ 根据标题撰写视频文案
+
+在执行创造类型任务时，可以通过适当提示 Temperature 和 Top-P 两项参数，提高回答的创意。比如 - Temperature = 1.4 ，Top_P = 0.4 。
 
 **输入 prompts:**
 
@@ -112,7 +138,7 @@ Assistant: 好的，
 > 2. 张伟, & 陈志勇 (2018).美国加息对中国A股市场影响及其应对策略[J].金融研究, (12), 135-139.
 
 
-### 根据餐饮评价进行打分
+### ⭐ 根据餐饮评价进行打分
 
 **输入 prompts:**
 ```
@@ -127,7 +153,9 @@ Response:
 
 ## 自然语言处理
 
-### 自然语言处理（情感分类）
+### ⭐ 自然语言处理（情感分类）
+
+**1. 用户评论情感分析**
 
 **输入 prompts:**
 ```
@@ -142,7 +170,7 @@ Response:
 > 正向
 
 ---
-**外卖评论情感分析**
+**2. 外卖评论情感分析**
 
 **输入 prompts:**
 ```
@@ -155,7 +183,7 @@ Response:
 **参考输出：**
 > 0
 ---
-**电商产品评论情感分析**
+**3. 电商产品评论情感分析**
 ```
 Instruction: 请分析给定评论属于正面评论还是负面评论。
 
@@ -166,7 +194,7 @@ Response:
 **参考输出：**
 > 负面评论
 
-### 自然语言处理（相似度分类）
+### ⭐ 自然语言处理（相似度分类）
 
 **输入 prompts:**
 ```
@@ -181,7 +209,7 @@ Response:
 **参考输出：**
 > 是
 
-### 自然语言处理（文本蕴涵识别）
+### ⭐ 自然语言处理（文本蕴涵识别）
 
 **输入 prompts:**
 ```
@@ -195,7 +223,7 @@ Response:
 **参考输出：**
 > 蕴含
 
-### 自然语言处理（文本分类）
+### ⭐ 自然语言处理（文本分类）
 
 **输入 prompts:**
 ```
@@ -208,7 +236,7 @@ Response:
 **参考输出：**
 > {"LABEL": education}
 
-### 自然语言处理（情绪检测）
+### ⭐ 自然语言处理（情绪检测）
 
 **输入 prompts:**
 ```
@@ -221,7 +249,7 @@ Response:
 **参考输出：**
 > 中性
 
-### 自然语言处理（机器阅读理解）
+### ⭐ 自然语言处理（机器阅读理解）
 
 **输入 prompts:**
 ```
@@ -237,7 +265,7 @@ Response:
 **参考输出：**
 > 光荣和ω-force
 
-### 自然语言处理（触发词识别）
+### ⭐ 自然语言处理（触发词识别）
 
 **输入 prompts:**
 ```
@@ -254,7 +282,7 @@ Response:
 **参考输出：**
 > {"TRIGGERS":质押}
 
-### 自然语言处理（理解对话问答）
+### ⭐ 自然语言处理（理解对话问答）
 
 **输入 prompts:**
 ```
@@ -270,7 +298,7 @@ Response:
 > {"答案": "喜剧片"}
 
 
-### 自然语言处理（文本主题分类）
+### ⭐ 自然语言处理（文本主题分类）
 
 **输入 prompts:**
 ```
@@ -451,6 +479,104 @@ Execution:
     recommended_dish = extract_information(search_result, "name of recommended dish")
     print(recommended_dish)
     ```
+```
+
+### ⭐ 识别角色扮演对话并调用对应 function
+
+**输入 prompts:**
+```
+User: Choose 梦's most relevant function for the provided dialogue. Only select one function from the list.
+Response format: <rationale>Reasoning.</rationale><function>name()</function>
+
+dialogue:
+- 旅行者: 你好呀
+- 梦: 你好，冷不冷，篝火现在有些微弱
+
+Available functions:
+- start_smile(): Whenever 旅行者 gives a compliment or says something nice, or when I recall a happy memory
+- start_happy(): Whenever 旅行者 shares good news or something uplifting, or when I feel a burst of joy
+- start_surprise(): Whenever 旅行者 shares something unexpected or when I encounter an unforeseen event
+- start_acknowledge(): Whenever 旅行者 asks for confirmation or acknowledgment, or when I want to show understanding and agreement
+- start_scared(): Whenever 旅行者 shares sudden alarming news or when I sense immediate danger
+- start_confused(): Whenever 旅行者 shares something puzzling or ambiguous, or when I'm uncertain about the context
+- start_sing_edge_of_night(): Whenever 旅行者 requests a song or when I'm feeling contemplative
+- start_sing_dragonborn_comes(): Whenever 旅行者 asks for a tune or when the spirit of adventure rises in me
+- start_sing_ancient_woods(): Whenever 旅行者 asks for a melody that echoes the past or when I'm reminiscing ancient times
+- start_sing_celestial_chants(): Whenever 旅行者 desires a hymn from the heavens or when I'm feeling uplifted
+- start_sing_enchanted_echoes(): Whenever 旅行者 yearns for a magical melody or when enchantment fills the air
+- start_sing_savage_daughter(): Whenever 旅行者 requests a song of wild spirits or when my inner warrior awakens
+- adjust_sitting_position_by_fire(): Whenever I feel the need to change my pose by the fire, or when 旅行者 asks me to change my pose by the fire
+- stand_up(): After being seated by the fire for a while, I may want to stand to stretch my legs, or when 旅行者 suggests I stand up for a moment
+- sit_beside_you(): Whenever I feel the need for some companionship, or when 旅行者 invites me to sit next to them
+- walk_around_campfire_Investigating(): If I hear a rustling in the woods or sense something amiss, or when 旅行者 asks me to check the surroundings
+- casual_stroll_around_campfire(): When I want to stretch my legs or clear my thoughts, or if 旅行者 suggests a leisurely walk
+- add_wood_to_fire(): When I notice the flames dwindling, or when 旅行者 mentions the fire needs fuel
+- noop(): None of these actions match the reply.
+
+Assistant: <rationale>因为对话中提到篝火微弱，so {{ char }} notice the flames dwinding，所以最相关的动作是add_wood_to_fire()</rationale><function>add_wood_to_fire()</function>
+
+User: Choose 梦's most relevant action for the provided dialogue. Only select one action from the list.
+Response format: <rationale>Reasoning.</rationale><function>name()</function>
+
+dialogue:
+- 旅行者: 坐在我的身边吧
+- 梦: *我考虑一下*好吧，我勉为其难坐在你身边吧
+
+Available tools:
+- start_smile(): Whenever 旅行者 gives a compliment or says something nice, or when I recall a happy memory
+- start_happy(): Whenever 旅行者 shares good news or something uplifting, or when I feel a burst of joy
+- start_surprise(): Whenever 旅行者 shares something unexpected or when I encounter an unforeseen event
+- start_acknowledge(): Whenever 旅行者 asks for confirmation or acknowledgment, or when I want to show understanding and agreement
+- start_scared(): Whenever 旅行者 shares sudden alarming news or when I sense immediate danger
+- start_confused(): Whenever 旅行者 shares something puzzling or ambiguous, or when I'm uncertain about the context
+- start_sing_edge_of_night(): Whenever 旅行者 requests a song or when I'm feeling contemplative
+- start_sing_dragonborn_comes(): Whenever 旅行者 asks for a tune or when the spirit of adventure rises in me
+- start_sing_ancient_woods(): Whenever 旅行者 asks for a melody that echoes the past or when I'm reminiscing ancient times
+- start_sing_celestial_chants(): Whenever 旅行者 desires a hymn from the heavens or when I'm feeling uplifted
+- start_sing_enchanted_echoes(): Whenever 旅行者 yearns for a magical melody or when enchantment fills the air
+- start_sing_savage_daughter(): Whenever 旅行者 requests a song of wild spirits or when my inner warrior awakens
+- adjust_sitting_position_by_fire(): Whenever I feel the need to change my pose by the fire, or when 旅行者 asks me to change my pose by the fire
+- stand_up(): After being seated by the fire for a while, I may want to stand to stretch my legs, or when 旅行者 suggests I stand up for a moment
+- sit_beside_you(): Whenever I feel the need for some companionship, or when 旅行者 invites me to sit next to them
+- walk_around_campfire_Investigating(): If I hear a rustling in the woods or sense something amiss, or when 旅行者 asks me to check the surroundings
+- casual_stroll_around_campfire(): When I want to stretch my legs or clear my thoughts, or if 旅行者 suggests a leisurely walk
+- add_wood_to_fire(): When I notice the flames dwindling, or when 旅行者 mentions the fire needs fuel
+- noop(): None of these actions match the reply.
+
+Assistant: <rationale>因为对话中提到坐在我的身边，我认为最相关的动作是sit_beside_you().</rationale><function>sit_beside_you()</function>
+
+User: Choose 梦's most relevant action for the provided dialogue. Only select one action from the list.
+Response format: <rationale>Reasoning.</rationale><function>name()</function>
+
+dialogue:
+- {{ user }}: {{ previous_message }}
+- {{ last_message }}
+
+↑ 这里需要改成旅行者和梦的对话，比如：
+
+- 旅行者: 我们刚刚得到了一大笔报酬！
+- 梦: *开心*真的吗！太好了，我们可以吃大餐啦！
+
+Available tools:
+{{~ for function in functions ~}}
+- {{ function.signature }}: {{ function.description }}
+{{~ end ~}}
+- noop(): None of these actions match the reply.
+
+↑ 这里需要手动改成可用的 function list，可以复制前文，比如：
+
+- start_smile(): Whenever 旅行者 gives a compliment or says something nice, or when I recall a happy memory
+- start_happy(): Whenever 旅行者 shares good news or something uplifting, or when I feel a burst of joy
+- start_surprise(): Whenever 旅行者 shares something unexpected or when I encounter an unforeseen event
+- start_acknowledge(): Whenever 旅行者 asks for confirmation or acknowledgment, or when I want to show understanding and agreement
+- start_scared(): Whenever 旅行者 shares sudden alarming news or when I sense immediate danger
+- noop(): None of these actions match the reply.
+
+Assistant:
+```
+**参考输出：**
+```
+<rationale>因为对话中提到了旅行者得到了一大笔报酬，所以最相关的动作是start_surprise().</rationale><function>start_surprise()</function>
 ```
 
 ## 续写小说
