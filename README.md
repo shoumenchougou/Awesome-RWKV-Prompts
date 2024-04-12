@@ -16,7 +16,7 @@
 
 RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
 
-RWKV 模型的当前稳定版本是 [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth)，最新版本是 [RWKV-6-World 1B6 v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/blob/main/RWKV-x060-World-1B6-v2.1-20240328-ctx4096.pth)。（RWKV-6-World 1B6 v2.0 使用 1.， v2.1 版本使用 2.5T tokens 训练）。
+RWKV 模型的当前稳定版本是 [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth)，最新版本是 [RWKV-6-World 1B6 v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/blob/main/RWKV-x060-World-1B6-v2.1-20240328-ctx4096.pth)。
 
 --- 
 ## 如何体验 RWKV 模型
