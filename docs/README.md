@@ -6,13 +6,13 @@
 
 如果你希望在本地部署 RWKV 模型，我们建议采用以下两种工具：
 
-- [**RWKV Runner**](https://github.com/josStorer/RWKV-Runner)：由社区成员 josStorer 开发的 RWKV 模型启动和管理工具，支持 LoRA 微调等多种功能，可以在 NVIDIA、AMD、Intel 等显卡上运行。
-- [**AI00 RWKV Server**](https://github.com/Ai00-X/ai00_server):一个基于 RWKV 模型的推理 API 服务器，基于 WEB-RWKV 推理引擎进行开发。AI00 Server 支持 Vulkan/Dx12/OpenGL 作为推理后端，无需臃肿的 pytorch、CUDA 等运行环境，小巧身材，开箱即用！
+- [RWKV Runner](https://github.com/josStorer/RWKV-Runner)：由社区成员 josStorer 开发的 RWKV 模型启动和管理工具，支持 LoRA 微调等多种功能，可以在 NVIDIA、AMD、Intel 等显卡上运行。
+- [AI00 RWKV Server](https://github.com/Ai00-X/ai00_server):一个基于 RWKV 模型的推理 API 服务器，基于 WEB-RWKV 推理引擎进行开发。AI00 Server 支持 Vulkan/Dx12/OpenGL 作为推理后端，无需臃肿的 pytorch、CUDA 等运行环境，小巧身材，开箱即用！
 
 如果你只是想简单尝试一下 RWKV 模型，可以尝试由 RWKV 官方部署在 Hugging Face 的公共 Demo：
 
-- [**RWKV-5 7B**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-5 。
-- [**RWKV-6 1.6B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新发布的 RWKV 6 架构模型。
+- [RWKV-5 7B](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-5 。
+- [RWKV-6 1.6B v2.1](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新发布的 RWKV 6 架构模型。
 
 ## Hugging Face Gradio 用法
 --- 

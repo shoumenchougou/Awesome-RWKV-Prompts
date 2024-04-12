@@ -1,29 +1,78 @@
 section.cover blockquote {
-    font-size: 1rem; 
-  }
+  font-size: 1rem;
+}
 
-  .sidebar .app-name .app-name-link {
-    /* background-color: #5bae23; */
-    color: #5bae23;
-    border-radius: 4px;
-    border-width: 0;
-    cursor: pointer;
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding: 12px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    line-height: 1.54;
-    font-weight: 600;
-    outline: 0;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    white-space: nowrap;
-    width: 95%;
-  }
+.sidebar .app-name .app-name-link {
+  /* background-color: #5bae23; */
+  color: #5bae23;
+  border-radius: 4px;
+  border-width: 0;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  line-height: 1.54;
+  font-weight: 600;
+  outline: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 95%;
+}
+
+.docsify-copy-code-button {
+  opacity: 1 !important;
+  border: 1px !important;
+  border-radius: 10px !important;
+  padding: 0.5em !important;
+}
+
+.markdown-section p, .markdown-section ul, .markdown-section ol{
+  line-height: 2rem;
+}
+.markdown-section p a,
+.markdown-section td a,
+.markdown-section ul a, 
+.markdown-section ol a {
+  text-decoration: none; /* 删除默认的下划线 */
+  position: relative; /* 使得伪元素相对于超链接位置定位 */
+}
+
+.markdown-section p a::after,
+.markdown-section ul a::after, 
+.markdown-section ol a::after{
+  content: ""; /* 伪元素内容为空 */
+  position: absolute; /* 绝对定位 */
+  bottom: -3px; /* 调整下划线距离文本的位置 */
+  left: 0; /* 保持在超链接的左边 */
+  width: 100%; /* 宽度占满超链接 */
+  height: 1px; /* 下划线的高度 */
+  background-color: #5bae23/* 下划线的颜色 */
+}
+
+.app-nav a {
+  color: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative; /* 使得伪元素相对于超链接位置定位 */
+  transition: color 0.2s;
+}
+
+.app-nav a:hover::after {
+  content: ""; /* 伪元素内容为空 */
+  position: absolute; /* 绝对定位 */
+  bottom: -4px; /* 调整下划线距离文本的位置 */
+  left: 0; /* 保持在超链接的左边 */
+  width: 100%; /* 宽度占满超链接 */
+  height: 1px; /* 下划线的高度 */
+  background-color: #5bae23/* 下划线的颜色 */;
+}
