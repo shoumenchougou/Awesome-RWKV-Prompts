@@ -6,9 +6,9 @@
 
 ## 请在以下链接阅览 RWKV prompt 示例：
 
-###  [**中文版本 RWKV-Prompts**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/)
+###  [**中文版本 RWKV-Prompts**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/#/Chat-Prompts)
 
-###  [**RWKV-Prompts for English**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/#/./en-US/README-en)
+###  [**RWKV-Prompts for English**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/#/en-US/Chat-Prompts-en)
 
 ![RWKV-Prompts-Page-screenshot](./docs/_media/screenshot.png)
 
