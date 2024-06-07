@@ -42,4 +42,4 @@ RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Tr
 
 RWKV 模型的最新版本是 [RWKV-6](https://huggingface.co/BlinkDL/rwkv-6-world)，架构图如下：
 
-![image](./_media/rwkv-x060.jpg ':size=500')
+![image](./_media/Rwkv-6_architecture.webp ':size=500')
