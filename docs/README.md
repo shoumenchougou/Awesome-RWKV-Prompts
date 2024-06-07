@@ -11,8 +11,8 @@
 
 如果你只是想简单尝试一下 RWKV 模型，可以尝试由 RWKV 官方部署在 Hugging Face 的公共 Demo：
 
-- [RWKV-5 7B](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-5 。
-- [RWKV-6 1.6B v2.1](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新发布的 RWKV 6 架构模型。
+- [RWKV-Gradio-1](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) 
+- [RWKV-Gradio-2](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) 
 
 ## Hugging Face Gradio 用法
 --- 
