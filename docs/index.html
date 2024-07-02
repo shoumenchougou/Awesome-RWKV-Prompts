@@ -96,5 +96,14 @@
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/index.min.js"></script>
+    <script>
+      document.addEventListener("copy", function (e) {
+        var selectedText = window.getSelection().toString();
+        if (selectedText) {
+          e.clipboardData.setData("text/plain", selectedText.trim());
+          e.preventDefault();
+        }
+      });
+    </script>
   </body>
 </html>
