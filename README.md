@@ -16,7 +16,7 @@
 
 RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
 
-RWKV 模型的当前稳定版本是 [RWKV-5-World 7B](https://huggingface.co/BlinkDL/rwkv-5-world/blob/main/RWKV-5-World-7B-v2-20240128-ctx4096.pth)，最新版本是 [RWKV-6-World 1B6 v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/blob/main/RWKV-x060-World-1B6-v2.1-20240328-ctx4096.pth)。
+RWKV 模型的当前稳定版本是 [RWKV-6-World 7B v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/resolve/main/RWKV-x060-World-7B-v2.1-20240507-ctx4096.pth?download=true)，最新版本是 [RWKV-6-World 14B v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/resolve/main/RWKV-x060-World-14B-v2.1-20240719-ctx4096.pth?download=true)。
 
 --- 
 ## 如何体验 RWKV 模型
@@ -28,8 +28,8 @@ RWKV 模型的当前稳定版本是 [RWKV-5-World 7B](https://huggingface.co/Bli
 
 如果你只是想简单尝试一下 RWKV 模型，可以尝试以下部署在 HF Gradio 的公共 Demo：
 
-- [**RWKV-5 7B**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-5 。
-- [**RWKV-6 1.6B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新发布的 RWKV 6 架构模型。
+- [**RWKV-6 7B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-6 。
+- [**RWKV-6 3B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，参数较少的 3B 版本。
 
 ### Hugging Face Gradio 用法
 
@@ -56,7 +56,7 @@ Response:
 ---
 ## 参数设置
 
-此仓库中的 prompt 示例基于 RWKV-5-7B-World 模型，随着模型版本和参数的调整，生成的结果可能会产生变化。
+此仓库中的 prompt 示例基于 RWKV-6-7B-World 模型，随着模型版本和参数的调整，生成的结果可能会产生变化。
 
 你可以通过调整 API 参数改变示例 Prompts 的生成效果。
 
@@ -125,7 +125,7 @@ Response:
 
 ## ✍️ 部分 Prompts 示例
 
-下列 prompt 示例基于 RWKV-5-World-7B 模型的对话模式，随着模型版本和 API 参数的调整，生成的结果可能会产生变化。
+下列 prompt 示例基于 RWKV-6-World-7B 模型的对话模式，随着模型版本和 API 参数的调整，生成的结果可能会产生变化。
 
 再次提醒，README 中只展示了少量 RWKV prompt ，完整的 RWKV prompt 清单请在 [**GitHub Page**](https://shoumenchougou.github.io/Awesome-RWKV-Prompts/) 中阅览。
 
@@ -280,4 +280,120 @@ Assistant:
 **参考输出：**
 ```
 <rationale>因为对话中提到了旅行者得到了一大笔报酬，所以最相关的动作是start_surprise().</rationale><function>start_surprise()</function>
+```
+## 结构化
+
+在执行材料提取、总结等任务时，可以通过大幅降低 Temperature 和 Top-P 两项参数降低模型的创造力，使模型严格遵循指令。比如 Temperature = 0.9 - 1 , Top-P = 0 - 0.1 。
+
+### ⭐ 提取用户输入关键词并输出 JSON 
+
+--- 
+
+**输入 prompts:**
+```
+Instruction: You are an expert assistant responsible for extracting destination and day information from user input and producing valid JSON in the following format:
+{
+"location": "the location name, Nan if there is no adjustment",
+"num_day": "the num day is the number of days, 0 if there is no adjustment",
+}
+
+Input: 这个礼拜二我会去上海，呆到礼拜四。
+
+Response:
+```
+
+**参考输出：**
+```json
+{
+"location": "上海",
+"num_day": "2",
+}
+```
+
+### ⭐ 提取对话信息并输出 JSON 
+---
+**输入 prompts:**
+```
+Instruction: You are an expert assitant for summarizing and extracting insights from sales call transcripts
+Generate a valid JSON in the following format:
+{
+    "summary": "Summary of the call transcript. ",
+    "products": ["product 1", "product 2"],
+    "rep_name": "Name of the sales rep",
+    "prospect_name": "Name of the prospect",
+    "action_items": ["action item 1", "action item 2"],
+}
+
+Input: [Phone rings]
+
+John: Hello, this is John.
+
+Sarah: Hi John, this is Sarah from XYZ Company. I'm calling to discuss our new product, the XYZ Widget, and see if it might be a good fit for your business.
+
+John: Hi Sarah, thanks for reaching out. I'm definitely interested in learning more about the XYZ Widget. Can you give me a quick overview of what it does?
+
+Sarah: Of course! The XYZ Widget is a cutting-edge tool that helps businesses streamline their workflow and improve productivity.
+
+John: That sounds really interesting. I can see how that could benefit our team. Do you have any case studies or success stories from other companies who have used the XYZ Widget?
+
+Sarah: Absolutely, we have several case studies that I can share with you. I'll send those over along with some additional information about the product. I'd also love to schedule a demo for you and your team to see the XYZ Widget in action.
+
+John: That would be great. I'll make sure to review the case studies and then we can set up a time for the demo. In the meantime, are there any specific action items or next steps we should take?
+
+Sarah: Yes, I'll send over the information and then follow up with you to schedule the demo. In the meantime, feel free to reach out if you have any questions or need further information.
+
+John: Sounds good, I appreciate your help Sarah. I'm looking forward to learning more about the XYZ Widget and seeing how it can benefit our business.
+
+Sarah: Thank you, John.
+
+John: You too, bye.
+
+Response:
+```
+**参考输出：**
+```json
+{
+    "summary": "John is interested in learning more about a new product called the XYZ Widget. He asks for a case study and information about pricing. Sarah agrees to send over information and set up a demo.",
+    "products": ["XYZ Widget"],
+    "rep_name": "Sarah",
+    "prospect_name": "John",
+    "action_items": ["send case study, schedule demo"]
+}
+```
+>
+
+### ⭐ 总结文档关键词并输出 JSON
+---
+**输入 prompts:**
+```
+User: 公安部今年以来在全国各地共收缴枪支4万支，全国持枪、爆炸犯罪案件同比下降1%。
+
+Assistant: 
+    ```json
+    {
+    "keywords": ["公安部", "犯罪", "预防犯罪", "枪支"]
+    }
+    ```
+
+User: 板块方面，春节即将来临，文旅板块再度涌现潜伏盘，丽江股份、九华旅游双双封板，三特索道、峨眉山A涨超5%。因高股息开始受关注的公路股继续悄悄发育，山西路桥涨停，山东高速涨超4%创历史新高，宁沪高速、粤高速A双双新高。
+
+Assistant: 
+    ```json
+    {
+    "keywords": ["经济", "文旅板块", "股市"]
+    }
+    ```
+
+User: 据UDN报道，由于先进封装产能长期短缺，导致英伟达AI芯片供应紧张，之前已经寻求其他途径试图增加先进封装产能，现在已经将目光投向英特尔，作为其高级封装服务的提供商，以减缓紧张的供应形势。除了在美国，英特尔在马来西亚槟城也有封装设施，而且制定了一个开放的模式，允许客户单独利用其封装解决方案。预计英特尔最早会在今年第二季度开始向英伟达提供先进封装，月产能为5000片晶圆。台积电依然会是英伟达主要的封装合作伙伴，占据着最多的份额，不过随着英特尔的加入，使得英伟达所需要的封装总产能大幅度提升了近10%。台积电也没有减慢封装产能的扩张步伐，今年第一季度大概能增至月产能接近5万片晶圆，比去年12月增长25%。AI芯片供应短缺主要源自先进封装产能不足，另外HBM3供应紧张也是原因之一，另外部分云端服务商过度下单也增加了供应链的压力。当然，一些服务器供应商则从这些订单中受惠，并加速扩大产能，以便云端服务商能快速部署设备。
+
+Assistant:
+    ```json
+
+```
+**参考输出：**
+```json
+{
+"keywords": ["英伟达","英特尔","先进封装","AI芯片","供应紧张","高级封装服务","台积电","HBM3","云端服务商"]
+}
+    ```
 ```
