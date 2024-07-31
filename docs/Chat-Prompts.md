@@ -227,53 +227,6 @@ print("The similarity score between the two texts is:", similarity_score)  # 输
 >在上述代码中，我们首先定义了两个待比较的文本字符串。然后，我们使用TfidfVectorizer对象进行特征提取和向量化处理，并将其转换为TF-IDF矩阵形式。接着，我们使用cosine similarity函数计算这两个文本之间的余弦相似度得分。
 >需要注意的是，在实际应用中可能需要根据具体情况进行调整和优化。例如，可以考虑使用不同的特征提取方法、不同的词向量表示方法等来提高模型性能。
 
-**3. 复杂情景分析**
-
-**输入 prompts：**
-
-```
-你需要实现一个简单的单层感知机（Perceptron）模型，并提供对其训练方法的实现。单层感知机是一种基础的线性二分类器，它对输入向量进行权值组合，然后通过激活函数（通常是一个符号函数）来决定该输入是属于正类还是负类。\n\n在这个问题中，感知机的训练算法需要采用以下规则进行权值更新：
-1. 当一个实例被错误分类时，模型需要使用以下规则对权值向量 b 进行更新：
-   b = b + l_rate * y_traini * x_traini\n   其中 l_rate 是学习率（一个小的常数，例如0.01），y_traini 是第 i 个训练样本的类标签，x_traini 是第 i 个训练样本的特征向量。
-2. 训练过程需要迭代所有训练样本直到某一轮迭代中没有错误分类的实例，即能够完全正确分类训练集上的所有数据点。
-3. 模型训练方法 fit 接收两个参数：X, 一个二维数组，其中每行代表一个训练实例的特征向量；y, 一个一维数组，其中每个元素代表对应训练实例的类标签，类标签取值是 1 或 -1。
-
-你的任务是实现感知机的训练方法 fit。此方法应该更新感知机的权值，以至于在训练数据上达到零错误分类为止，并返回一个字符串 "Perceptron Model trained!"，以表示训练过程完成。
-示例训练集如下：
-X = 1, 2, 2, 3, 1.5, 2.5, -1, -2, -2, -3, -1.5, -2.5
-y = 1, 1, 1, -1, -1, -1
-注意，在实现时不需要使用任何外部库，如 numpy 或 pandas。
-```
-
-**参考输出：**
-> 感谢您提供的问题。下面是一个简单的Python实现，用于训练单层感知机模型：
-```python
-import numpy as np
-class Perceptron:
-    def __init__(self, learning_rate=0.01):
-        self.learning_rate = learning_rate
-    def fit(self, X, y):
-        n = len(X)
-        for i in range(n):
-            if y[i] == 1:
-                self.update_weights(X[i], 1)
-            else:
-                self.update_weights(-1 * X[i], -1)
-    def update_weights(self, x, label):
-        w = self.w + self.learning_rate * x * label
-        if w > 0:
-            self.w = w
-        else:
-            print("Error! Weight cannot be negative.")
-    def predict(self, x):
-        return np.sign(np.dot(x, self.w))
-```
-> 在这个实现中，我们定义了一个 `Perceptron` 类，它包含两个方法：`fit` 和 `predict`。在 `fit` 方法中，我们遍历训练集中的每个样本，并根据其标签更新权重向量。如果错误分类了某个样本，则会输出错误信息。
-> 
-> 在 `predict` 方法中，我们使用权重向量来预测给定输入的类别。
-> 
-> 请注意，这里使用了 Python 内置函数 `np.sign()` 来计算激活函数的值。
-
 ### ⭐ 撰写销售工作日报
 **输入 prompts:**
 
