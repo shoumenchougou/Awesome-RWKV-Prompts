@@ -1,8 +1,8 @@
 
-### ⭐ Write and translate emails (multilingual)
---- 
+### ⭐ Write and Translate Emails (Multilingual)
+---
 
-**Input prompts:**
+**Input Prompts:**
 
 ```text
 Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nicht mehr tun werde!
@@ -14,15 +14,15 @@ Schreiben Sie einen Brief an meinen Professor und sagen Sie ihm, dass ich es nic
 >
 > ich schreibe heute an Sie, um Ihnen mitzuteilen, dass ich nicht länger bereit bin, an dem Projekt teilzunehmen. Ich möchte mich dafür entschuldigen, dass ich bisher nicht aktiv genug war und das Projekt nicht erfolgreich beenden konnte.
 >
-> Ich habe versucht alles in meiner Macht Stehende zu tun, um das Projekt erfolgreich abzuschließen, aber es hat sich als unmöglich erwiesen. Ich hatte Schwierigkeiten mit der Planung des Projekts und hatte Probleme bei der Zusammenarbeit mit den anderen Teammitgliedern. Außerdem habe ich festgestellt, dass die Aufgaben zu komplex waren und mir fehlte die notwendige Zeit und Ressourcen um sie erfolgreich abzuschließen.
+> Ich habe versucht, alles in meiner Macht Stehende zu tun, um das Projekt erfolgreich abzuschließen, aber es hat sich als unmöglich erwiesen. Ich hatte Schwierigkeiten mit der Planung des Projekts und hatte Probleme bei der Zusammenarbeit mit den anderen Teammitgliedern. Außerdem habe ich festgestellt, dass die Aufgaben zu komplex waren und mir die notwendige Zeit und Ressourcen fehlten, um sie erfolgreich abzuschließen.
 >
-> Ich möchte mich bei Ihnen dafür entschuldigen, dass ich bisher nicht aktiv genug war und das Projekt nicht erfolgreich beenden konnte. Ich werde alles in meiner Macht Stehende tun um diese Fehler wieder gutzumachen und das nächste Mal besser vorbereitet zu sein.
+> Ich möchte mich bei Ihnen dafür entschuldigen, dass ich bisher nicht aktiv genug war und das Projekt nicht erfolgreich beenden konnte. Ich werde alles in meiner Macht Stehende tun, um diese Fehler wieder gutzumachen und das nächste Mal besser vorbereitet zu sein.
 >
-> Ich hoffe Sie können mir verzeihen und mich weiterhin als Teil des Teams betrachten. Bitte lassen Sie mich wissen wenn ich etwas tun kann um das Projekt wieder auf den richtigen Weg zu bringen oder wenn Sie Hilfe benötigen.
+> Ich hoffe, Sie können mir verzeihen und mich weiterhin als Teil des Teams betrachten. Bitte lassen Sie mich wissen, wenn ich etwas tun kann, um das Projekt wieder auf den richtigen Weg zu bringen oder wenn Sie Hilfe benötigen.
 >
 > Mit freundlichen Grüßen, [Ihr Name]
 
-**Continue inputting prompts:**
+**Continue Inputting Prompts:**
 
 ```
 Translate into Chinese.
@@ -44,37 +44,28 @@ Translate into Chinese.
 >
 > [你的名字]
 
-**Continue entering prompts**
+**Continue Entering Prompts:**
 
 ```
 Translate into Thai.
 ```
 **Reference Output：**
 
-> สวัสดีครับ/ค่ะ [ชื่อของคุณ]
-> 
-> ฉันเขียนจดหมายนี้มาให้ท่านทราบว่าฉันจะไม่ทำอีกต่อไป!
-> 
-> ฉันพยายามทำทุกอย่างเพื่อให้โปรเจ็กต์ประสบความสำเร็จและไม่สำเร็จไปด้วย!
-> 
-> ฉันพยายามแก้ไขปัญหารูปแบบการทำงานของโปรเจ็กต์และไม่สำเร็จในการสิ้นสุดโครงการ!
-> 
-> ฉันขอโทษที่ไม่ได้มีส่วนร่วมให้กระตือรือลุกลื่นและไม่สำเร็จให้ถูกต้อง!
-> 
-> ฉันขอโทษที่ไม่ได้ช่วยเหลือให้โครงการประสบความสำเร็จและไม่ได้ชื่อว่ารูปแบบการทำงานที่ถูกต้อง!
+> เรียน ศาสตราจารย์ [ชื่อ]
 >
-> ฉันขอโทษที่ไม่ได้ชื่อว่ารูปแบบการทำงานที่ถูกต้อง!
+> ผม/ดิฉันเขียนจดหมายฉบับนี้มาเพื่อแจ้งให้ท่านทราบว่าผม/ดิฉันไม่สามารถเข้าร่วมโครงการนี้ได้อีกต่อไปแล้ว ผม/ดิฉันขออภัยที่ไม่สามารถมีส่วนร่วมอย่างเต็มที่และไม่สามารถทำให้โครงการนี้สำเร็จได้
 >
-> ฉันจะพยายามทุกวิธีเพื่อชดเชยผิดพลาดของฉันและให้คำปรึกษาระหว่างการทำงานใหม่!
-> 
-> ขอบคุณที่ได้ใช้เวลารูปแบบการทำงานที่ถูกต้อง!
-> 
-> [ชื่อของคุณ]
+> ผม/ดิฉันพยายามทำทุกอย่างที่ทำได้เพื่อให้โครงการนี้สำเร็จ แต่พบว่ามันเป็นไปไม่ได้ ผม/ดิฉันมีปัญหาในการวางแผนโครงการและมีปัญหาในการทำงานร่วมกับสมาชิกในทีมคนอื่น ๆ นอกจากนี้ผม/ดิฉันพบว่างานนั้นซับซ้อนเกินไปและขาดเวลาและทรัพยากรที่จำเป็นในการทำงานให้สำเร็จ
+>
+> ผม/ดิฉันขออภัยที่ไม่สามารถมีส่วนร่วมอย่างเต็มที่และไม่สามารถทำให้โครงการนี้สำเร็จได้ ผม/ดิฉันจะพยายามทำทุกอย่างที่ทำได้เพื่อชดเชยข้อผิดพลาดนี้และเตรียมตัวให้ดียิ่งขึ้นในครั้งหน้า
+>
+> ผม/ดิฉันหวังว่าท่านจะสามารถให้อภัยและยังคงพิจารณาผม/ดิฉันเป็นส่วนหนึ่งของทีม โปรดแจ้งให้ผม/ดิฉันทราบหากมีสิ่งใดที่ผม/ดิฉันสามารถทำได้เพื่อช่วยให้โครงการกลับมาดำเนินต่อไปได้หรือหากท่านต้องการความช่วยเหลือ
+>
+> ขอแสดงความนับถือ, [ชื่อของคุณ]
 
-
-### ⭐ Translate and modify the leave email.
+### ⭐ Translate and Modify the Leave Email
 ---
-**Input prompts:**
+**Input Prompts:**
 
 ```
 User: Write an email to my professor, asking for a leave for today's group meeting.
@@ -91,7 +82,7 @@ User: Write an email to my professor, asking for a leave for today's group meeti
 > 
 > [Your Name]
 
-**Continue inputting prompts, update the reason for leave:**
+**Continue Inputting Prompts, Update the Reason for Leave:**
 
 ```
 Actually the reason is that I am having a fever. Please update the email to include that information.
@@ -101,7 +92,7 @@ Actually the reason is that I am having a fever. Please update the email to incl
 
 > Dear Professor [Name],
 > 
-> I hope this email finds you well! I am writing to request a leave from today's group meeting at [Time]. Unfortunately, there is an urgent family matter that requires my immediate attention and cannot be postponed any further due to fever symptoms affecting me physically (please see attached medical certificate). As such, I kindly request permission to miss the meeting today without penalty or consequences on my academic record.
+> I hope this email finds you well! I am writing to request a leave from today's group meeting at [Time]. Unfortunately, I am currently experiencing fever symptoms, which require me to rest and recover (please see attached medical certificate). As such, I kindly request permission to miss the meeting today without penalty or consequences on my academic record.
 > 
 > Please let me know if there are any alternatives available so that I can still participate in the group discussion remotely or at another time more convenient for everyone involved. Thank you very much for your understanding and support during this challenging situation!
 > 
@@ -109,7 +100,7 @@ Actually the reason is that I am having a fever. Please update the email to incl
 > 
 > [Your Name]
 
-**Continue inputting prompts, remove the "family matter" section.**
+**Continue Inputting Prompts, Remove the "Family Matter" Section:**
 
 ```
 Please remove the "family matter" part.
@@ -119,7 +110,7 @@ Please remove the "family matter" part.
 
 > Dear Professor [Name],
 > 
-> I hope this email finds you well! I am writing to request a leave from today's group meeting at [Time]. Unfortunately, there is an urgent medical condition affecting me physically (please see attached medical certificate). As such, I kindly request permission to miss the meeting today without penalty or consequences on my academic record.
+> I hope this email finds you well! I am writing to request a leave from today's group meeting at [Time]. Unfortunately, I am currently experiencing fever symptoms, which require me to rest and recover (please see attached medical certificate). As such, I kindly request permission to miss the meeting today without penalty or consequences on my academic record.
 > 
 > Please let me know if there are any alternatives available so that I can still participate in the group discussion remotely or at another time more convenient for everyone involved. Thank you very much for your understanding and support during this challenging situation!
 > 
@@ -127,9 +118,9 @@ Please remove the "family matter" part.
 > 
 > [Your Name]
 
-### ⭐ Read and modify codes.
+### ⭐ Read and Modify Code
 ---
-**Input prompts：**
+**Input Prompts:**
 ```
 Please read the following document and tell me what it is about:
 
@@ -146,26 +137,29 @@ print("Total apples for all: ", total_apples)
 ```
 **Reference Output：**
 
-> This is a Python code that defines three variables ming_apples, leo_apples, and blink_apples with values 7, 6, and 85 respectively. 
+> This is a Python code that defines three variables: `ming_apples`, `leo_apples`, and `blink_apples` with values 7, 6, and 85 respectively.
 >
-> It then calculates the total number of apples by adding the values of these variables and assigns it to a new variable total_apples.
+> It then calculates the total number of apples by adding the values of these variables and assigns it to a new variable `total_apples`.
 >
->  Finally, it prints out a message that displays the values of all three variables along with their sum.
+> Finally, it prints out a message displaying the values of all three variables along with their sum.
 
-**Continue inputting prompts, update the num of apple for Ming：**
+**Continue Inputting Prompts, Update the Number of Apples for Ming:**
 
 ```
 Please change Ming's apple to 80.
 ```
 
 **Reference Output：**
+
 > Here is the updated code:
 
 ```python
 ming_apples = 80
 leo_apples = 6
 blink_apples = 85
+
 total_apples = ming_apples + leo_apples + blink_apples
+
 print("Ming has", ming_apples, "apples.")
 print("Leo has", leo_apples, "apples.")
 print("Blink has", blink_apples, "apples.")
