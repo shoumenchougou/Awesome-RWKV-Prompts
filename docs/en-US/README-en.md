@@ -9,9 +9,9 @@ Every RWKV prompt example in this repository is ready to use. You can copy the p
 
 [RWKV](https://www.rwkv.com/) is an innovative, 100% attention-free deep learning network architecture that combines the strengths of both Transformer and RNN models. It achieves highly parallelized training and efficient inference.
 
-The latest version of the RWKV model is [RWKV-6](https://huggingface.co/BlinkDL/rwkv-6-world). Here is an illustration of RWKV v6:
+The latest version of the RWKV model is [RWKV-7](https://huggingface.co/BlinkDL/rwkv-7-world). Here is an illustration of RWKV v7:
 
-![image](../_media/rwkv-x060.jpg ':size=500')
+![image](../_media/rwkv-x070.jpg ':size=500')
 
 ## Usage with Hugging Face Gradio
 --- 
