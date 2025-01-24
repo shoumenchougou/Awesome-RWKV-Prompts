@@ -76,3 +76,25 @@ section.cover blockquote {
   height: 1px; /* 下划线的高度 */
   background-color: #5bae23/* 下划线的颜色 */;
 }
+
+.tips {
+   background-color: rgb(221 245 237); /* 浅绿背景 */
+   border-left: 5px solid rgb(16 185 129); /* 绿色边框 */
+   padding: 10px;
+   border-radius: 4px;
+  }
+  
+  
+  .note {
+   background-color: rgb(223 244 251); /* 浅蓝背景 */
+   border-left: 5px solid rgb(40 136 167); /* 蓝色边框 */
+   padding: 10px;
+   border-radius: 4px;
+  }
+  
+  .warning {
+   background-color: rgb(252 240 220); /* 浅黄背景色 */
+   border-left: 5px solid rgb(145 89 48); /* 黄色左边框 */
+   padding: 10px;
+   border-radius: 4px;
+  }
