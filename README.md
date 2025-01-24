@@ -16,7 +16,7 @@
 
 RWKV 是一种创新的 100% attention-free 深度学习网络架构，它将 Transformer 与 RNN 各自的优点相结合，同时实现高度并行化训练与高效推理。
 
-RWKV 模型的当前稳定版本是 [RWKV-6-World 7B v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/resolve/main/RWKV-x060-World-7B-v2.1-20240507-ctx4096.pth?download=true)，最新版本是 [RWKV-6-World 14B v2.1](https://huggingface.co/BlinkDL/rwkv-6-world/resolve/main/RWKV-x060-World-14B-v2.1-20240719-ctx4096.pth?download=true)。
+RWKV 模型的当前稳定版本是 [RWKV-6-World 7B v3](https://huggingface.co/BlinkDL/rwkv-6-world/resolve/main/RWKV-x060-World-7B-v3-20241112-ctx4096.pth?download=true)，最新版本是 [RWKV-7-World 0.4B v2.9](https://huggingface.co/BlinkDL/rwkv-7-world/resolve/main/RWKV-x070-World-0.4B-v2.9-20250107-ctx4096.pth?download=true)。
 
 --- 
 ## 如何体验 RWKV 模型
@@ -28,8 +28,8 @@ RWKV 模型的当前稳定版本是 [RWKV-6-World 7B v2.1](https://huggingface.c
 
 如果你只是想简单尝试一下 RWKV 模型，可以尝试以下部署在 HF Gradio 的公共 Demo：
 
-- [**RWKV-6 7B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-6 。
-- [**RWKV-6 3B v2.1**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，参数较少的 3B 版本。
+- [**RWKV-6 7B v3**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-2) ：当前的稳定版本 RWKV-6 
+- [**RWKV-7 0.4B v2.9**](https://huggingface.co/spaces/BlinkDL/RWKV-Gradio-1) ，最新的 RWKV-7 模型
 
 ### Hugging Face Gradio 用法
 
