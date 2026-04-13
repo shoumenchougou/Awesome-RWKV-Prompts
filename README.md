@@ -1,3 +1,9 @@
+**【重要】：此仓库不再更新，请查看官方教程：**
+- RWKV 的提示词格式：https://www.rwkv.cn/docs/RWKV-Prompts/Prompt-Format
+- 提示词示例（聊天模式）：https://www.rwkv.cn/docs/RWKV-Prompts/Chat-Prompts
+- 提示词示例（续写模式）：https://www.rwkv.cn/docs/RWKV-Prompts/Completion-Prompts
+
+---
 # Awesome-RWKV-Prompts
 
 欢迎来到 “Awesome-RWKV-Prompts” ！我们在此提供基于 RWKV 的 Prompts 最佳实践，也欢迎大家将自己创建的良好 RWKV Prompts 实践提交到仓库中。
